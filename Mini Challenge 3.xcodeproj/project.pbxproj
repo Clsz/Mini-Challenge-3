@@ -7,21 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D717230D53B70031D165 /* Profile.storyboard */; };
+		E1A5D719230D53D30031D165 /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D714230D53530031D165 /* Controller */; };
+		E1A5D71B230D54030031D165 /* PickUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71A230D54030031D165 /* PickUp.storyboard */; };
+		E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71C230D540D0031D165 /* Notification.storyboard */; };
+		E1A5D71F230D54250031D165 /* ListRecyclable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */; };
+		E1A5D721230D54300031D165 /* ListPrice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D720230D54300031D165 /* ListPrice.storyboard */; };
 		E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5550230D51C700F98225 /* AppDelegate.swift */; };
-		E1FC5553230D51C700F98225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5552230D51C700F98225 /* ViewController.swift */; };
 		E1FC5556230D51C700F98225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5554230D51C700F98225 /* Main.storyboard */; };
 		E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5557230D51C800F98225 /* Assets.xcassets */; };
 		E1FC555B230D51C800F98225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5559230D51C800F98225 /* LaunchScreen.storyboard */; };
+		E1FC5565230D521700F98225 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FC5564230D521700F98225 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E1A5D714230D53530031D165 /* Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controller; sourceTree = "<group>"; };
+		E1A5D717230D53B70031D165 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E1A5D71A230D54030031D165 /* PickUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUp.storyboard; sourceTree = "<group>"; };
+		E1A5D71C230D540D0031D165 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListRecyclable.storyboard; sourceTree = "<group>"; };
+		E1A5D720230D54300031D165 /* ListPrice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListPrice.storyboard; sourceTree = "<group>"; };
 		E1FC554D230D51C700F98225 /* Mini Challenge 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FC5550230D51C700F98225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1FC5552230D51C700F98225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1FC5555230D51C700F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1FC5557230D51C800F98225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1FC555A230D51C800F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1FC555C230D51C800F98225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1FC5562230D521400F98225 /* Mini Challenge 3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mini Challenge 3.entitlements"; sourceTree = "<group>"; };
+		E1FC5564230D521700F98225 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +42,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1FC5565230D521700F98225 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1A5D716230D53A20031D165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1A5D717230D53B70031D165 /* Profile.storyboard */,
+				E1FC5554230D51C700F98225 /* Main.storyboard */,
+				E1A5D71A230D54030031D165 /* PickUp.storyboard */,
+				E1A5D71C230D540D0031D165 /* Notification.storyboard */,
+				E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */,
+				E1A5D720230D54300031D165 /* ListPrice.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E1FC5544230D51C700F98225 = {
 			isa = PBXGroup;
 			children = (
 				E1FC554F230D51C700F98225 /* Mini Challenge 3 */,
 				E1FC554E230D51C700F98225 /* Products */,
+				E1FC5563230D521700F98225 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +82,23 @@
 		E1FC554F230D51C700F98225 /* Mini Challenge 3 */ = {
 			isa = PBXGroup;
 			children = (
+				E1A5D716230D53A20031D165 /* View */,
+				E1A5D714230D53530031D165 /* Controller */,
+				E1FC5562230D521400F98225 /* Mini Challenge 3.entitlements */,
 				E1FC5550230D51C700F98225 /* AppDelegate.swift */,
-				E1FC5552230D51C700F98225 /* ViewController.swift */,
-				E1FC5554230D51C700F98225 /* Main.storyboard */,
 				E1FC5557230D51C800F98225 /* Assets.xcassets */,
 				E1FC5559230D51C800F98225 /* LaunchScreen.storyboard */,
 				E1FC555C230D51C800F98225 /* Info.plist */,
 			);
 			path = "Mini Challenge 3";
+			sourceTree = "<group>";
+		};
+		E1FC5563230D521700F98225 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1FC5564230D521700F98225 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +133,14 @@
 				TargetAttributes = {
 					E1FC554C230D51C700F98225 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,9 +167,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A5D71B230D54030031D165 /* PickUp.storyboard in Resources */,
 				E1FC555B230D51C800F98225 /* LaunchScreen.storyboard in Resources */,
+				E1A5D71F230D54250031D165 /* ListRecyclable.storyboard in Resources */,
+				E1A5D721230D54300031D165 /* ListPrice.storyboard in Resources */,
 				E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */,
+				E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */,
+				E1A5D719230D53D30031D165 /* Controller in Resources */,
 				E1FC5556230D51C700F98225 /* Main.storyboard in Resources */,
+				E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +186,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1FC5553230D51C700F98225 /* ViewController.swift in Sources */,
 				E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mini Challenge 3/Mini Challenge 3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7858P7ZUST;
 				INFOPLIST_FILE = "Mini Challenge 3/Info.plist";
@@ -300,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mini Challenge 3/Mini Challenge 3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7858P7ZUST;
 				INFOPLIST_FILE = "Mini Challenge 3/Info.plist";
