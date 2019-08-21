@@ -13,7 +13,7 @@
         <!--Notification View Controller-->
         <scene sceneID="TTj-iP-X5u">
             <objects>
-                <viewController id="0zj-xK-OKh" customClass="NotificationViewController" sceneMemberID="viewController">
+                <viewController id="0zj-xK-OKh" customClass="NotificationViewController" customModule="Mini_Challenge_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Hb-2e-Kcb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="283" y="-258"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Notification View Controller-->
         <scene sceneID="5r4-72-FVs">
             <objects>
-                <viewController id="ajh-pn-PJ0" sceneMemberID="viewController">
+                <viewController id="ajh-pn-PJ0" customClass="DetailNotificationViewController" customModule="Mini_Challenge_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bq8-aI-pmW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

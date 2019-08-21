@@ -1,6 +1,6 @@
 //
-//  DetailListRecyclableViewController.swift
-//  MC3
+//  PickUpViewController.swift
+//  Mini Challenge 3
 //
 //  Created by Muhammad Reynaldi on 21/08/19.
 //  Copyright © 2019 11. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailListRecyclableViewController: UIViewController {
+class PickUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

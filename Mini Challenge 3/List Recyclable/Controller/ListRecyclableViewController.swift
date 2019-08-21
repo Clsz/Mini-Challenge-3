@@ -1,6 +1,6 @@
 //
-//  DashboardViewController.swift
-//  MC3
+//  ListRecyclableViewController.swift
+//  Mini Challenge 3
 //
 //  Created by Muhammad Reynaldi on 21/08/19.
 //  Copyright © 2019 11. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class ListRecyclableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

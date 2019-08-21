@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D717230D53B70031D165 /* Profile.storyboard */; };
-		E1A5D719230D53D30031D165 /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D714230D53530031D165 /* Controller */; };
 		E1A5D71B230D54030031D165 /* PickUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71A230D54030031D165 /* PickUp.storyboard */; };
 		E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71C230D540D0031D165 /* Notification.storyboard */; };
 		E1A5D71F230D54250031D165 /* ListRecyclable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */; };
 		E1A5D721230D54300031D165 /* ListPrice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D720230D54300031D165 /* ListPrice.storyboard */; };
+		E1AB5E33230D67B800EC5FC3 /* ListRecyclableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E32230D67B800EC5FC3 /* ListRecyclableViewController.swift */; };
+		E1AB5E35230D67D700EC5FC3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E34230D67D700EC5FC3 /* NotificationViewController.swift */; };
+		E1AB5E37230D67F600EC5FC3 /* DetailNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E36230D67F600EC5FC3 /* DetailNotificationViewController.swift */; };
+		E1AB5E39230D681800EC5FC3 /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E38230D681800EC5FC3 /* PickUpViewController.swift */; };
+		E1AB5E3B230D68BC00EC5FC3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E3A230D68BC00EC5FC3 /* DashboardViewController.swift */; };
+		E1AB5E3D230D68E000EC5FC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E3C230D68E000EC5FC3 /* ProfileViewController.swift */; };
 		E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5550230D51C700F98225 /* AppDelegate.swift */; };
 		E1FC5556230D51C700F98225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5554230D51C700F98225 /* Main.storyboard */; };
 		E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5557230D51C800F98225 /* Assets.xcassets */; };
@@ -21,12 +26,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E1A5D714230D53530031D165 /* Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controller; sourceTree = "<group>"; };
 		E1A5D717230D53B70031D165 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E1A5D71A230D54030031D165 /* PickUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUp.storyboard; sourceTree = "<group>"; };
 		E1A5D71C230D540D0031D165 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListRecyclable.storyboard; sourceTree = "<group>"; };
 		E1A5D720230D54300031D165 /* ListPrice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListPrice.storyboard; sourceTree = "<group>"; };
+		E1AB5E32230D67B800EC5FC3 /* ListRecyclableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecyclableViewController.swift; sourceTree = "<group>"; };
+		E1AB5E34230D67D700EC5FC3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		E1AB5E36230D67F600EC5FC3 /* DetailNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNotificationViewController.swift; sourceTree = "<group>"; };
+		E1AB5E38230D681800EC5FC3 /* PickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpViewController.swift; sourceTree = "<group>"; };
+		E1AB5E3A230D68BC00EC5FC3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		E1AB5E3C230D68E000EC5FC3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E1FC554D230D51C700F98225 /* Mini Challenge 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FC5550230D51C700F98225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1FC5555230D51C700F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,17 +59,162 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E1A5D716230D53A20031D165 /* View */ = {
+		E1AB5E1B230D660600EC5FC3 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E1FC5559230D51C800F98225 /* LaunchScreen.storyboard */,
+			);
+			path = "Splash Screen";
+			sourceTree = "<group>";
+		};
+		E1AB5E1C230D662D00EC5FC3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E1E230D664000EC5FC3 /* Controller */,
+				E1AB5E1D230D663B00EC5FC3 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E1AB5E1D230D663B00EC5FC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E1A5D717230D53B70031D165 /* Profile.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1AB5E1E230D664000EC5FC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E3C230D68E000EC5FC3 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1AB5E21230D669700EC5FC3 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E23230D66A500EC5FC3 /* Controller */,
+				E1AB5E22230D669F00EC5FC3 /* View */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E1AB5E22230D669F00EC5FC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				E1FC5554230D51C700F98225 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1AB5E23230D66A500EC5FC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E3A230D68BC00EC5FC3 /* DashboardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1AB5E26230D66F800EC5FC3 /* Pick Up */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E28230D670A00EC5FC3 /* Controller */,
+				E1AB5E27230D670300EC5FC3 /* View */,
+			);
+			path = "Pick Up";
+			sourceTree = "<group>";
+		};
+		E1AB5E27230D670300EC5FC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				E1A5D71A230D54030031D165 /* PickUp.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1AB5E28230D670A00EC5FC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E38230D681800EC5FC3 /* PickUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1AB5E29230D671C00EC5FC3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E2B230D673200EC5FC3 /* Controller */,
+				E1AB5E2A230D672200EC5FC3 /* View */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		E1AB5E2A230D672200EC5FC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				E1A5D71C230D540D0031D165 /* Notification.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1AB5E2B230D673200EC5FC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E34230D67D700EC5FC3 /* NotificationViewController.swift */,
+				E1AB5E36230D67F600EC5FC3 /* DetailNotificationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1AB5E2C230D674200EC5FC3 /* List Recyclable */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E2F230D675900EC5FC3 /* Controller */,
+				E1AB5E2E230D675400EC5FC3 /* View */,
+			);
+			path = "List Recyclable";
+			sourceTree = "<group>";
+		};
+		E1AB5E2D230D674F00EC5FC3 /* List Price */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E31230D676800EC5FC3 /* Controller */,
+				E1AB5E30230D675D00EC5FC3 /* View */,
+			);
+			path = "List Price";
+			sourceTree = "<group>";
+		};
+		E1AB5E2E230D675400EC5FC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1AB5E2F230D675900EC5FC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB5E32230D67B800EC5FC3 /* ListRecyclableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1AB5E30230D675D00EC5FC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				E1A5D720230D54300031D165 /* ListPrice.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E1AB5E31230D676800EC5FC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E1FC5544230D51C700F98225 = {
@@ -82,12 +237,16 @@
 		E1FC554F230D51C700F98225 /* Mini Challenge 3 */ = {
 			isa = PBXGroup;
 			children = (
-				E1A5D716230D53A20031D165 /* View */,
-				E1A5D714230D53530031D165 /* Controller */,
 				E1FC5562230D521400F98225 /* Mini Challenge 3.entitlements */,
+				E1AB5E2D230D674F00EC5FC3 /* List Price */,
+				E1AB5E2C230D674200EC5FC3 /* List Recyclable */,
+				E1AB5E29230D671C00EC5FC3 /* Notification */,
+				E1AB5E26230D66F800EC5FC3 /* Pick Up */,
+				E1AB5E21230D669700EC5FC3 /* Dashboard */,
+				E1AB5E1B230D660600EC5FC3 /* Splash Screen */,
+				E1AB5E1C230D662D00EC5FC3 /* Profile */,
 				E1FC5550230D51C700F98225 /* AppDelegate.swift */,
 				E1FC5557230D51C800F98225 /* Assets.xcassets */,
-				E1FC5559230D51C800F98225 /* LaunchScreen.storyboard */,
 				E1FC555C230D51C800F98225 /* Info.plist */,
 			);
 			path = "Mini Challenge 3";
@@ -173,7 +332,6 @@
 				E1A5D721230D54300031D165 /* ListPrice.storyboard in Resources */,
 				E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */,
 				E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */,
-				E1A5D719230D53D30031D165 /* Controller in Resources */,
 				E1FC5556230D51C700F98225 /* Main.storyboard in Resources */,
 				E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */,
 			);
@@ -186,7 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AB5E39230D681800EC5FC3 /* PickUpViewController.swift in Sources */,
+				E1AB5E3B230D68BC00EC5FC3 /* DashboardViewController.swift in Sources */,
 				E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */,
+				E1AB5E35230D67D700EC5FC3 /* NotificationViewController.swift in Sources */,
+				E1AB5E3D230D68E000EC5FC3 /* ProfileViewController.swift in Sources */,
+				E1AB5E33230D67B800EC5FC3 /* ListRecyclableViewController.swift in Sources */,
+				E1AB5E37230D67F600EC5FC3 /* DetailNotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

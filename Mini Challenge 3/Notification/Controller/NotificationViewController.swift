@@ -1,6 +1,6 @@
 //
-//  ListPriceViewController.swift
-//  MC3
+//  NotificationViewController.swift
+//  Mini Challenge 3
 //
 //  Created by Muhammad Reynaldi on 21/08/19.
 //  Copyright © 2019 11. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListPriceViewController: UIViewController {
+class NotificationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
