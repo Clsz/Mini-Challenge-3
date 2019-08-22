@@ -10,6 +10,10 @@ import UIKit
 
 class NotificationViewController: UIViewController {
 
+    // Variables
+    let cellID = "activityID"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

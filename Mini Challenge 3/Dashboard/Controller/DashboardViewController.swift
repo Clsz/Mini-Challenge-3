@@ -10,20 +10,31 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     // Variables
-    let sortId = "sortID"
+    let cellID = "sortID"
     var sortImages = [UIImage(named: "plastik"), UIImage(named: "metal"), UIImage(named: "kayu"), UIImage(named: "kaca"), UIImage(named: "kertas")]
     
     //Outlet
     @IBOutlet weak var sortCollectionView: UICollectionView!
+    @IBOutlet weak var pickUpButton: UIButton!
+    @IBOutlet weak var priceListButton: UIButton!
+    @IBOutlet weak var recyclableStuffButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cellDelegate()
+        setView()
     }
     
     @IBAction func notifTapped(_ sender: UIButton) {
     }
     
+}
+extension DashboardViewController{
+    func setView(){
+        pickUpButton.littleRoundButton()
+        priceListButton.littleRoundButton()
+        recyclableStuffButton.littleRoundButton()
+    }
 }
 
 extension DashboardViewController:UICollectionViewDataSource, UICollectionViewDelegate{
@@ -38,7 +49,7 @@ extension DashboardViewController:UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sortId, for: indexPath) as! SortInfoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! SortInfoCollectionViewCell
         cell.sortImage.image = sortImages[indexPath.row]
         
         return cell

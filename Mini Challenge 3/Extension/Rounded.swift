@@ -18,7 +18,7 @@ extension UIImageView {
     }
     
     func littleRound(){
-        self.layer.cornerRadius = 20.0
+        self.layer.cornerRadius = 20
         self.clipsToBounds = true
     }
     
@@ -36,7 +36,7 @@ extension UIView {
     }
     
     func littleRoundView(){
-        self.layer.cornerRadius = 20.0
+        self.layer.cornerRadius = 12.0
         self.clipsToBounds = false
     }
     
@@ -55,7 +55,7 @@ extension UIView {
 
 extension UIButton{
     func littleRoundButton(){
-        self.layer.cornerRadius = 10.0
+        self.layer.cornerRadius = 12
         self.clipsToBounds = false
     }
 }
