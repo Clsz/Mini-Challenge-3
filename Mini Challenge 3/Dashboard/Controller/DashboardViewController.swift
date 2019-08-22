@@ -18,6 +18,11 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var pickUpButton: UIButton!
     @IBOutlet weak var priceListButton: UIButton!
     @IBOutlet weak var recyclableStuffButton: UIButton!
+    @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var accountPlace: UIView!
+    @IBOutlet weak var accountBar: UIView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +36,12 @@ class DashboardViewController: UIViewController {
 }
 extension DashboardViewController{
     func setView(){
+        imageProfile.setRounded()
         pickUpButton.littleRoundButton()
         priceListButton.littleRoundButton()
         recyclableStuffButton.littleRoundButton()
+        accountPlace.reallyRound()
+        accountBar.barRound()
     }
 }
 
