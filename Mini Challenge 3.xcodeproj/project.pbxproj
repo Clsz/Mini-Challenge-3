@@ -18,6 +18,9 @@
 		E1AB5E39230D681800EC5FC3 /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E38230D681800EC5FC3 /* PickUpViewController.swift */; };
 		E1AB5E3B230D68BC00EC5FC3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E3A230D68BC00EC5FC3 /* DashboardViewController.swift */; };
 		E1AB5E3D230D68E000EC5FC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E3C230D68E000EC5FC3 /* ProfileViewController.swift */; };
+		E1CEA62F230E73D3009CDF08 /* SortInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEA62E230E73D3009CDF08 /* SortInfoCollectionViewCell.swift */; };
+		E1CEA632230E77AE009CDF08 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEA631230E77AE009CDF08 /* Rounded.swift */; };
+		E1CEA636230E96FD009CDF08 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEA635230E96FD009CDF08 /* ActivityTableViewCell.swift */; };
 		E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5550230D51C700F98225 /* AppDelegate.swift */; };
 		E1FC5556230D51C700F98225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5554230D51C700F98225 /* Main.storyboard */; };
 		E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5557230D51C800F98225 /* Assets.xcassets */; };
@@ -37,6 +40,9 @@
 		E1AB5E38230D681800EC5FC3 /* PickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpViewController.swift; sourceTree = "<group>"; };
 		E1AB5E3A230D68BC00EC5FC3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E1AB5E3C230D68E000EC5FC3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E1CEA62E230E73D3009CDF08 /* SortInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1CEA631230E77AE009CDF08 /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
+		E1CEA635230E96FD009CDF08 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		E1FC554D230D51C700F98225 /* Mini Challenge 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FC5550230D51C700F98225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1FC5555230D51C700F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E1AB5E3A230D68BC00EC5FC3 /* DashboardViewController.swift */,
+				E1CEA62E230E73D3009CDF08 /* SortInfoCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 			children = (
 				E1AB5E34230D67D700EC5FC3 /* NotificationViewController.swift */,
 				E1AB5E36230D67F600EC5FC3 /* DetailNotificationViewController.swift */,
+				E1CEA635230E96FD009CDF08 /* ActivityTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,6 +225,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E1CEA630230E77A0009CDF08 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEA631230E77AE009CDF08 /* Rounded.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		E1FC5544230D51C700F98225 = {
 			isa = PBXGroup;
 			children = (
@@ -237,14 +253,15 @@
 		E1FC554F230D51C700F98225 /* Mini Challenge 3 */ = {
 			isa = PBXGroup;
 			children = (
-				E1FC5562230D521400F98225 /* Mini Challenge 3.entitlements */,
-				E1AB5E2D230D674F00EC5FC3 /* List Price */,
-				E1AB5E2C230D674200EC5FC3 /* List Recyclable */,
-				E1AB5E29230D671C00EC5FC3 /* Notification */,
-				E1AB5E26230D66F800EC5FC3 /* Pick Up */,
 				E1AB5E21230D669700EC5FC3 /* Dashboard */,
+				E1AB5E29230D671C00EC5FC3 /* Notification */,
 				E1AB5E1B230D660600EC5FC3 /* Splash Screen */,
 				E1AB5E1C230D662D00EC5FC3 /* Profile */,
+				E1AB5E26230D66F800EC5FC3 /* Pick Up */,
+				E1AB5E2C230D674200EC5FC3 /* List Recyclable */,
+				E1AB5E2D230D674F00EC5FC3 /* List Price */,
+				E1CEA630230E77A0009CDF08 /* Extension */,
+				E1FC5562230D521400F98225 /* Mini Challenge 3.entitlements */,
 				E1FC5550230D51C700F98225 /* AppDelegate.swift */,
 				E1FC5557230D51C800F98225 /* Assets.xcassets */,
 				E1FC555C230D51C800F98225 /* Info.plist */,
@@ -346,10 +363,13 @@
 			files = (
 				E1AB5E39230D681800EC5FC3 /* PickUpViewController.swift in Sources */,
 				E1AB5E3B230D68BC00EC5FC3 /* DashboardViewController.swift in Sources */,
+				E1CEA636230E96FD009CDF08 /* ActivityTableViewCell.swift in Sources */,
 				E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */,
 				E1AB5E35230D67D700EC5FC3 /* NotificationViewController.swift in Sources */,
+				E1CEA62F230E73D3009CDF08 /* SortInfoCollectionViewCell.swift in Sources */,
 				E1AB5E3D230D68E000EC5FC3 /* ProfileViewController.swift in Sources */,
 				E1AB5E33230D67B800EC5FC3 /* ListRecyclableViewController.swift in Sources */,
+				E1CEA632230E77AE009CDF08 /* Rounded.swift in Sources */,
 				E1AB5E37230D67F600EC5FC3 /* DetailNotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,61 @@
+//
+//  Rounded.swift
+//  Mini Challenge 3
+//
+//  Created by Muhammad Reynaldi on 22/08/19.
+//  Copyright © 2019 11. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+extension UIImageView {
+    func setRounded(){
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.cornerRadius = self.frame.height/2
+        self.clipsToBounds = true
+    }
+    
+    func littleRound(){
+        self.layer.cornerRadius = 20
+        self.clipsToBounds = true
+    }
+    
+    func littleRoundKevin(){
+        self.layer.cornerRadius = 30.0
+        self.layer.masksToBounds = true
+    }
+}
+
+extension UIView {
+    
+    func setRoundedView(){
+        self.layer.cornerRadius = self.frame.size.width / 2
+        self.clipsToBounds = true
+    }
+    
+    func littleRoundView(){
+        self.layer.cornerRadius = 12.0
+        self.clipsToBounds = false
+    }
+    
+    func littleRoundCondition(){
+        self.layer.cornerRadius = 10.0
+        self.clipsToBounds = false
+    }
+    
+    func reallyRound(){
+        self.layer.cornerRadius = 10.0
+        self.clipsToBounds = false
+    }
+    
+    
+}
+
+extension UIButton{
+    func littleRoundButton(){
+        self.layer.cornerRadius = 12
+        self.clipsToBounds = false
+    }
+}
