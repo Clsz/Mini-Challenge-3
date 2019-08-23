@@ -22,10 +22,6 @@ extension UIImageView {
         self.clipsToBounds = true
     }
     
-    func littleRoundKevin(){
-        self.layer.cornerRadius = 30.0
-        self.layer.masksToBounds = true
-    }
 }
 
 extension UIView {
