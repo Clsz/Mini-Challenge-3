@@ -18,6 +18,15 @@ extension UIView{
         self.layer.shadowRadius = 5
         self.layer.shouldRasterize = true
     }
+    
+    func shadowActivity(){
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOpacity = 4
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowRadius = 2
+        self.layer.shouldRasterize = true
+    }
 }
 
 extension UIButton{

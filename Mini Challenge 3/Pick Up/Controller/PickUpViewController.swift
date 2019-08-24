@@ -137,6 +137,8 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
         newPickUp["photoEvidence"] = CKAsset(fileURL: url!)
         newPickUp["idUser"] = CKRecord.Reference(recordID: userId, action: CKRecord_Reference_Action.none)
         newPickUp["pickUpFrom"] = addressTV.text
+        newPickUp["pickUpBy"] = "Bank Sampah Mitra Pusani"
+        newPickUp["pickUpStatus"] = "On-Going"
         
         database.save(newPickUp) { (record, erro) in
             do { try FileManager.default.removeItem(at: url!) }

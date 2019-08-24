@@ -273,4 +273,5 @@
         <image name="notification" width="27" height="32"/>
         <image name="recycle-bin" width="57" height="57"/>
     </resources>
+    <color key="tintColor" red="0.078431372550000003" green="0.50980392159999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>
