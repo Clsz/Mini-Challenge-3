@@ -18,24 +18,10 @@ class ListPriceViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        cellDelegate()
         super.viewDidLoad()
     }
     
-
-}
-extension ListPriceViewController:UITableViewDataSource, UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-    
-    func cellDelegate(){
-        listPriceTableView.dataSource = self
-        listPriceTableView.delegate = self
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
 }

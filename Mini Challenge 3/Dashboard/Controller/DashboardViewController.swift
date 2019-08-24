@@ -30,6 +30,10 @@ class DashboardViewController: UIViewController {
         setView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     @IBAction func notifTapped(_ sender: UIButton) {
     }
     

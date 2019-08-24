@@ -10,6 +10,6 @@ import UIKit
 
 class EvidenceCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var evidenceButton: UIButton!
+    @IBOutlet weak var evidenceImage: UIImageView!
 }
  
