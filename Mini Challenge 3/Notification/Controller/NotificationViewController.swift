@@ -12,6 +12,7 @@ class NotificationViewController: UIViewController {
 
     // Variables
     let cellID = "activityID"
+    let segue = "goToDetailNotification"
     let database = CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     var pickups = [CKRecord]()
     
@@ -28,6 +29,14 @@ class NotificationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         queryDatabase()
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailNotification = segue.destination as! DetailNotificationViewController
+        if let indexPath = pickUpTV.indexPathForSelectedRow{
+            let pickup = pickups[indexPath.row]
+            detailNotification.objPickUp = pickup
+        }
     }
     
 }
@@ -82,5 +91,8 @@ extension NotificationViewController:UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segue, sender: self)
+    }
     
 }
