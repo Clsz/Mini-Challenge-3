@@ -1,22 +1,22 @@
 //
-//  ProfileViewController.swift
+//  EditProfileViewController.swift
 //  Mini Challenge 3
 //
-//  Created by Muhammad Reynaldi on 21/08/19.
+//  Created by Jerry Ming Ho on 26/08/19.
 //  Copyright © 2019 11. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-   
+class EditProfileViewController: UIViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var imageEditProfile: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-    profileImage.setRounded()
+
+        imageEditProfile.setRounded()
+        
         // Do any additional setup after loading the view.
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		688F7B822313B1EB006E3209 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688F7B812313B1EB006E3209 /* EditProfileViewController.swift */; };
 		E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D717230D53B70031D165 /* Profile.storyboard */; };
 		E1A5D71B230D54030031D165 /* PickUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71A230D54030031D165 /* PickUp.storyboard */; };
 		E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71C230D540D0031D165 /* Notification.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		688F7B812313B1EB006E3209 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E1A5D717230D53B70031D165 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E1A5D71A230D54030031D165 /* PickUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUp.storyboard; sourceTree = "<group>"; };
 		E1A5D71C230D540D0031D165 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				E1AB5E3C230D68E000EC5FC3 /* ProfileViewController.swift */,
+				688F7B812313B1EB006E3209 /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				688F7B822313B1EB006E3209 /* EditProfileViewController.swift in Sources */,
 				E1AB5E39230D681800EC5FC3 /* PickUpViewController.swift in Sources */,
 				E1AB5E3B230D68BC00EC5FC3 /* DashboardViewController.swift in Sources */,
 				E1CEA636230E96FD009CDF08 /* ActivityTableViewCell.swift in Sources */,
@@ -520,6 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7858P7ZUST;
 				INFOPLIST_FILE = "Mini Challenge 3/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,6 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7858P7ZUST;
 				INFOPLIST_FILE = "Mini Challenge 3/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
