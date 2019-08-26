@@ -16,16 +16,33 @@ class ListRecyclableTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        queryDatabase()
 
         // Configure the view for the selected state
     }
 
+    func queryDatabase() {
+        let query = CKQuery(recordType: "Waste", predicate: NSPredicate(value: true))
+        CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase.perform(query, inZoneWith: nil) { (records, _) in
+            guard let records = records else { return }
+            //            print(records)
+            let sortedRecords = records.sorted(by: { $1.modificationDate! > $0.modificationDate! })
+            self.listSampah = sortedRecords
+            DispatchQueue.main.async {
+                self.listSampahCV.reloadData()
+            }
+        }
+    }
+    
 }
+
+
 extension ListRecyclableTableViewCell:UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

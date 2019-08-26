@@ -17,6 +17,7 @@ class ListRecyclableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
     
