@@ -53,7 +53,7 @@ extension ListRecyclableTableViewCell:UICollectionViewDataSource, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listJenisSampah", for: indexPath) as! ListRecyclableCollectionViewCell
         
         cell.jenisSampah.text = listSampah[indexPath.row].value(forKey: "wasteCategory") as? String
-        cell.gambarSampah.image = listSampah[indexPath.row].value(forKey: "wastePicture") as? UIImage
+//        cell.gambarSampah.image = listSampah[indexPath.row].value(forKey: "wastePicture") as? UIImage
         return cell
     }
     
