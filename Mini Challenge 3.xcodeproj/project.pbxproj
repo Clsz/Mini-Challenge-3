@@ -13,6 +13,8 @@
 		14A6E8E523139C4B0065B06B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A6E8E423139C4B0065B06B /* Login.storyboard */; };
 		14A6E8E923139C800065B06B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6E8E823139C800065B06B /* LoginViewController.swift */; };
 		E17DBCE0231115EC00748857 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17DBCDF231115EC00748857 /* Shadow.swift */; };
+		688F7B822313B1EB006E3209 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688F7B812313B1EB006E3209 /* EditProfileViewController.swift */; };
+		68D0C79C2313B529003FD659 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D0C79B2313B529003FD659 /* Shadow.swift */; };
 		E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D717230D53B70031D165 /* Profile.storyboard */; };
 		E1A5D71B230D54030031D165 /* PickUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71A230D54030031D165 /* PickUp.storyboard */; };
 		E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71C230D540D0031D165 /* Notification.storyboard */; };
@@ -44,6 +46,8 @@
 		14A6E8E423139C4B0065B06B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		14A6E8E823139C800065B06B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E17DBCDF231115EC00748857 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		688F7B812313B1EB006E3209 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		68D0C79B2313B529003FD659 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		E1A5D717230D53B70031D165 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E1A5D71A230D54030031D165 /* PickUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUp.storyboard; sourceTree = "<group>"; };
 		E1A5D71C230D540D0031D165 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E1AB5E3C230D68E000EC5FC3 /* ProfileViewController.swift */,
+				688F7B812313B1EB006E3209 /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,8 +282,8 @@
 		E1CEA630230E77A0009CDF08 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				68D0C79B2313B529003FD659 /* Shadow.swift */,
 				E1CEA631230E77AE009CDF08 /* Rounded.swift */,
-				E17DBCDF231115EC00748857 /* Shadow.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -413,13 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				688F7B822313B1EB006E3209 /* EditProfileViewController.swift in Sources */,
 				E1AB5E39230D681800EC5FC3 /* PickUpViewController.swift in Sources */,
 				E1AB5E3B230D68BC00EC5FC3 /* DashboardViewController.swift in Sources */,
 				E1CEA63C230FD2DB009CDF08 /* ListPriceTableViewCell.swift in Sources */,
 				14A6E8E0231003B00065B06B /* ListRecyclableTableViewCell.swift in Sources */,
 				E1CEA636230E96FD009CDF08 /* ActivityTableViewCell.swift in Sources */,
 				E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */,
-				E17DBCE0231115EC00748857 /* Shadow.swift in Sources */,
 				E1CEA638230FCCAD009CDF08 /* EvidenceCollectionViewCell.swift in Sources */,
 				E1AB5E35230D67D700EC5FC3 /* NotificationViewController.swift in Sources */,
 				E1BB23A5231241CA004DD76D /* DetailActivityTableViewCell.swift in Sources */,
@@ -428,6 +433,7 @@
 				E1AB5E33230D67B800EC5FC3 /* ListRecyclableViewController.swift in Sources */,
 				E1CEA632230E77AE009CDF08 /* Rounded.swift in Sources */,
 				14A6E8E923139C800065B06B /* LoginViewController.swift in Sources */,
+				68D0C79C2313B529003FD659 /* Shadow.swift in Sources */,
 				E1CEA63A230FD2BF009CDF08 /* ListPriceViewController.swift in Sources */,
 				E1AB5E37230D67F600EC5FC3 /* DetailNotificationViewController.swift in Sources */,
 				14A6E8E2231003C20065B06B /* ListRecyclableCollectionViewCell.swift in Sources */,
