@@ -4,7 +4,7 @@
 //
 //  Created by Muhammad Reynaldi on 24/08/19.
 //  Copyright © 2019 11. All rights reserved.
-//
+//q
 
 import Foundation
 import UIKit
@@ -37,5 +37,6 @@ extension UIButton{
         self.layer.shadowOffset = CGSize(width: 2, height: 10)
         self.layer.shadowRadius = 5
         self.layer.shouldRasterize = true
+        
     }
 }
