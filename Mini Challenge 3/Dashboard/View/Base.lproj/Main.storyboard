@@ -231,10 +231,10 @@
             </objects>
             <point key="canvasLocation" x="2044" y="54"/>
         </scene>
-        <!--ListPrice-->
+        <!--ListPrices-->
         <scene sceneID="rcs-SG-GmB">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListPrice" id="91Y-Ui-jAO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ListPrices" id="91Y-Ui-jAO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XE-KQ-ccX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2048" y="103"/>
