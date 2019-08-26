@@ -16,7 +16,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var userEdit:CKRecord!
     
     @IBOutlet weak var imageEditProfile: UIImageView!
-    
     @IBOutlet weak var nameEditLabel: UITextView!
     @IBOutlet weak var emailEditLabel: UITextView!
     @IBOutlet weak var phoneNumberEditLabel: UITextView!
@@ -43,7 +42,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    
+    //func edit teks field
     func save(){
         
         userEdit["name"] = nameEditLabel.text as CKRecordValue
@@ -56,7 +55,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             print("saved record")
         }
     }
-    
+    // function button done
     func setView(){
         let edit = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(done(_:)))
         self.navigationItem.rightBarButtonItem  = edit
@@ -74,7 +73,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @objc func imageTapped(tapGesture: UITapGestureRecognizer){
         let tappedImage = tapGesture.view as! UIImageView
         
-        //Codingan untuk Image Picker Controller 
+        //Codingan untuk Image Picker Controller
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
