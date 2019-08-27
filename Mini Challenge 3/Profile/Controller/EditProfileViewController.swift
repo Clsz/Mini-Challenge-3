@@ -20,15 +20,19 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var emailEditLabel: UITextView!
     @IBOutlet weak var phoneNumberEditLabel: UITextView!
     @IBOutlet weak var addressEditLabel: UITextView!
-    @IBAction func changePhoto(_ sender: Any) {
+    @IBAction func changePhoto(_ sender: Any)
+    {
         
     }
+    @IBOutlet weak var imageIcon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         
         imageEditProfile.setRounded()
+        imageIcon.setRounded()
+        
         nameEditLabel.text = userEdit["name"]
         emailEditLabel.text = userEdit["email"]
         phoneNumberEditLabel.text = userEdit["phoneNumber"]
