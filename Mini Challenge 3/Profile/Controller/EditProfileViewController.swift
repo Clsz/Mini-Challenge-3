@@ -63,7 +63,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.03574425727, green: 0.5716548562, blue: 0.3996006846, alpha: 1)
     }
     
-    
     @objc func done (_ sender:UIButton){
         save()
         navigationController?.popViewController(animated: true)
