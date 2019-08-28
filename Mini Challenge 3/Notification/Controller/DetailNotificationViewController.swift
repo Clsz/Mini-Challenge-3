@@ -106,7 +106,7 @@ extension DetailNotificationViewController:UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellImg, for: indexPath) as! DetailImageCollectionViewCell
-        cell.imageEvi.image = tempImage[indexPath.row+1]
+        cell.imageEvi.image = tempImage[indexPath.row]
         return cell
     }
     

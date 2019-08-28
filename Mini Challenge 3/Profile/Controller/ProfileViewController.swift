@@ -43,8 +43,6 @@ class ProfileViewController: UIViewController {
         self.navigationItem.rightBarButtonItem  = edit
         self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.03574425727, green: 0.5716548562, blue: 0.3996006846, alpha: 1)
         self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.03574425727, green: 0.5716548562, blue: 0.3996006846, alpha: 1)
-       
-        
     }
     
     func queryDatabase() {
