@@ -12,5 +12,7 @@ class ListRecyclableCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var jenisSampah: UILabel!
     @IBOutlet weak var gambarSampah: UIImageView!
+    @IBOutlet weak var namaSampah: UILabel!
+    @IBOutlet weak var hargaSampah: UILabel!
 }
 
