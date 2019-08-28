@@ -61,6 +61,11 @@ extension UIView {
         self.clipsToBounds = false
     }
     
+    func acceptRound(){
+        self.layer.cornerRadius = 21
+        self.clipsToBounds = false
+    }
+    
 }
 
 extension UIButton{

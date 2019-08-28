@@ -11,11 +11,15 @@ import CloudKit
 class PickUpViewController: UIViewController {
     
     // Variables
+    let segue = "goToAccept"
     var imageEvidence = [UIImage]()
     var tempImage = [CKAsset]()
     let cellID = "evidenceID"
     let database = CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     var mediaURL:NSURL?
+    var accessoryDoneButton: UIBarButtonItem!
+    let accessoryToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+    let flexiblea = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     
     //Outlets
     @IBOutlet weak var addressTV: UITextView!
@@ -26,6 +30,8 @@ class PickUpViewController: UIViewController {
         super.viewDidLoad()
         cellDelegate()
         imageEvidence.append(UIImage(named: "Add")!)
+        setView()
+        setDoneOnKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +42,7 @@ class PickUpViewController: UIViewController {
     }
     
     @objc func requestTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        performSegue(withIdentifier: segue, sender: self)
         request()
     }
     
@@ -66,6 +72,20 @@ extension PickUpViewController{
         addressTV.pickRound()
         addressTV.setShadowView()
     }
+    
+    func setDoneOnKeyboard() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(PickUpViewController.dismissKeyboard))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        self.addressTV.inputAccessoryView = keyboardToolbar
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     
 }
 
@@ -125,9 +145,11 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
     func request(){
         
         for i in imageEvidence{
-            if let newData = i.jpegData(compressionQuality: 0.00001){
-                if let data = createAsset(data: newData){
-                    tempImage.append(data)
+            if i != imageEvidence[0] && i != imageEvidence.last{
+                if let newData = i.jpegData(compressionQuality: 0.00001){
+                    if let data = createAsset(data: newData){
+                        tempImage.append(data)
+                    }
                 }
             }
         }

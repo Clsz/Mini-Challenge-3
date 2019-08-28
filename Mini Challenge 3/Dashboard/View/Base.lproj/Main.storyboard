@@ -201,14 +201,6 @@
             </objects>
             <point key="canvasLocation" x="1111.5942028985507" y="129.91071428571428"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="fHd-wq-bn6">
-            <objects>
-                <viewControllerPlaceholder id="Bau-Rq-ceT" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xdE-Fv-6IY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1917" y="-115"/>
-        </scene>
         <!--Notification-->
         <scene sceneID="f45-gV-laG">
             <objects>

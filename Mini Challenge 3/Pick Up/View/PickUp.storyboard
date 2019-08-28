@@ -125,11 +125,63 @@
                     <connections>
                         <outlet property="addressTV" destination="1yg-HX-W6c" id="yMd-FC-XEq"/>
                         <outlet property="evidenceCollectionView" destination="74d-fR-MhW" id="NeX-5h-EhB"/>
+                        <segue destination="PAJ-3b-7Z1" kind="show" identifier="goToAccept" id="yen-KC-2co"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SY0-Rq-6Cl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--Accepted View Controller-->
+        <scene sceneID="hbO-Ku-0Sd">
+            <objects>
+                <viewController id="PAJ-3b-7Z1" customClass="AcceptedViewController" customModule="Mini_Challenge_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pNv-ZM-xPX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Accepted" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-qw-pS9">
+                                <rect key="frame" x="63" y="177" width="290" height="249"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your order has been apporoved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3n-z1-pZJ">
+                                <rect key="frame" x="34" y="449" width="348" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-pn-1hn">
+                                <rect key="frame" x="34" y="558" width="348" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Please put your trash outside the house.
+We will pick it up less than 24 hours.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4X-wR-Gqb">
+                                <rect key="frame" x="149" y="712" width="118" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.50980392159999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="okTapped:" destination="PAJ-3b-7Z1" eventType="touchUpInside" id="QGa-5w-sz2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="phZ-ET-t3l"/>
+                    </view>
+                    <connections>
+                        <outlet property="okButton" destination="N4X-wR-Gqb" id="EQk-B1-upj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbk-gw-SLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2371" y="117"/>
         </scene>
         <!--ListRecyclable-->
         <scene sceneID="5eG-xy-soY">
@@ -137,7 +189,10 @@
                 <viewControllerPlaceholder storyboardName="ListRecyclable" id="Gh4-iU-PEd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exV-cZ-zcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855.072463768116" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1880" y="-314"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Accepted" width="283" height="243"/>
+    </resources>
 </document>

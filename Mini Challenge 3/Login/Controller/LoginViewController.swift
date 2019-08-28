@@ -67,6 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func saveToCloud(){
         let data = CKRecord(recordType: "User")
         data["name"] = namaLengkap.text! as NSString
+        data["balance"] = 0
         data["address"] = alamatLengkap.text! as NSString
         data["phoneNumber"] = nomorHP.text! as NSString
         data["email"] = email.text! as NSString
