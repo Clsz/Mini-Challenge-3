@@ -233,18 +233,18 @@
             </objects>
             <point key="canvasLocation" x="2044" y="54"/>
         </scene>
-        <!--ListPrice-->
+        <!--ListPrices-->
         <scene sceneID="rcs-SG-GmB">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListPrice" id="91Y-Ui-jAO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ListPrices" id="91Y-Ui-jAO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XE-KQ-ccX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2048" y="103"/>
         </scene>
-        <!--ListRecyclable-->
+        <!--Login-->
         <scene sceneID="2JN-Wy-Y6B">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListRecyclable" id="WLu-lb-OCr" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Login" id="WLu-lb-OCr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrx-FL-jwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2047" y="147"/>
