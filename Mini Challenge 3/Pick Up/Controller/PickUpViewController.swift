@@ -12,6 +12,7 @@ class PickUpViewController: UIViewController {
     
     // Variables
     var imageEvidence = [UIImage]()
+    var tempImage = [CKAsset]()
     let cellID = "evidenceID"
     let database = CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     var mediaURL:NSURL?
@@ -31,6 +32,7 @@ class PickUpViewController: UIViewController {
         setView()
         evidenceCollectionView.reloadData()
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     @objc func requestTapped(_ sender: UIButton) {
@@ -112,7 +114,7 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        self.imageEvidence.append(image)
+        self.imageEvidence.insert(image, at: 1)
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -121,34 +123,50 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func request(){
-        //Image
-        let data = imageEvidence.first!.jpegData(compressionQuality: 1.0)
-        let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(NSUUID().uuidString+".dat")
-        do {
-            try data!.write(to: url!, options: [])
-        } catch let e as NSError {
-            print("Error! \(e)");
-            return
+        
+        for i in imageEvidence{
+            if let newData = i.jpegData(compressionQuality: 0.00001){
+                if let data = createAsset(data: newData){
+                    tempImage.append(data)
+                }
+            }
         }
+        
         //Get Referemce
         let userId = CKRecord.ID(recordName: "4DD23698-1376-452F-9FA8-06C63E1E6D85")
         
         let newPickUp = CKRecord(recordType: "PickUp")
-        newPickUp["photoEvidence"] = CKAsset(fileURL: url!)
+        newPickUp["photoEvidence"] = tempImage
         newPickUp["idUser"] = CKRecord.Reference(recordID: userId, action: CKRecord_Reference_Action.none)
         newPickUp["pickUpFrom"] = addressTV.text
         newPickUp["pickUpBy"] = "Bank Sampah Mitra Pusani"
         newPickUp["pickUpStatus"] = "On-Going"
         
-        database.save(newPickUp) { (record, erro) in
-            do { try FileManager.default.removeItem(at: url!) }
-            catch let e { print("Error deleting temp file: \(e)") }
-            
-           
-            guard record != nil else { return }
+        database.save(newPickUp) { (record, error) in
+            guard record != nil else {
+                print("error", error)
+                return }
             print("saved request")
+            
         }
     }
-        
     
+    fileprivate func createAsset(data: Data) -> CKAsset? {
+        
+        var returnAsset: CKAsset? = nil
+        
+        let tempStr = ProcessInfo.processInfo.globallyUniqueString
+        let filename = "\(tempStr)_file.dat"
+        let baseURL = URL(fileURLWithPath: NSTemporaryDirectory())
+        let fileURL = baseURL.appendingPathComponent(filename, isDirectory: false)
+        
+        do {
+            try data.write(to: fileURL, options: [.atomicWrite])
+            returnAsset = CKAsset(fileURL: fileURL)
+        } catch {
+            print("Error creating asset: \(error)")
+        }
+        
+        return returnAsset
+    }
 }

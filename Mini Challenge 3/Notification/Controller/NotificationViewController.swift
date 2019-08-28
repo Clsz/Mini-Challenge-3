@@ -16,19 +16,21 @@ class NotificationViewController: UIViewController {
     let database = CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     var pickups = [CKRecord]()
     
+    
+    
     //Outlets
     @IBOutlet weak var pickUpTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cellDelegate()
-        queryDatabase()
         refresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         queryDatabase()
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,8 +53,10 @@ extension NotificationViewController{
     
     @objc func queryDatabase() {
         let query = CKQuery(recordType: "PickUp", predicate: NSPredicate(value: true))
-        database.perform(query, inZoneWith: nil) { (records, _) in
-            guard let records = records else { return }
+        database.perform(query, inZoneWith: nil) { (records, error) in
+            guard let records = records else {
+                print("error",error)
+                return }
             let sortedRecords = records.sorted(by: { $0.creationDate! > $1.creationDate! })
             self.pickups = sortedRecords
             DispatchQueue.main.async {
@@ -61,6 +65,12 @@ extension NotificationViewController{
             }
         }
     }
+    
+    
+//    func fetch(){
+//        let recordID = CKRecord(recordType: "PickUp", recordID: <#T##CKRecord.ID#>
+//        database.fetch(withRecordID: "<#T##CKRecord.ID#>", completionHandler: <#T##(CKRecord?, Error?) -> Void#>)
+//    }
 }
 
 extension NotificationViewController:UITableViewDataSource, UITableViewDelegate{

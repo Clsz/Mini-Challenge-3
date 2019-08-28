@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		688F7B822313B1EB006E3209 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688F7B812313B1EB006E3209 /* EditProfileViewController.swift */; };
 		68D0C79C2313B529003FD659 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D0C79B2313B529003FD659 /* Shadow.swift */; };
+		E1045D932313F11E0051D339 /* AssetToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1045D922313F11E0051D339 /* AssetToImage.swift */; };
 		E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D717230D53B70031D165 /* Profile.storyboard */; };
 		E1A5D71B230D54030031D165 /* PickUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71A230D54030031D165 /* PickUp.storyboard */; };
 		E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71C230D540D0031D165 /* Notification.storyboard */; };
 		E1A5D71F230D54250031D165 /* ListRecyclable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */; };
 		E1A5D721230D54300031D165 /* ListPrice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A5D720230D54300031D165 /* ListPrice.storyboard */; };
+		E1AAA76C231542300091FFB6 /* DetailImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AAA76B231542300091FFB6 /* DetailImageCollectionViewCell.swift */; };
 		E1AB5E33230D67B800EC5FC3 /* ListRecyclableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E32230D67B800EC5FC3 /* ListRecyclableViewController.swift */; };
 		E1AB5E35230D67D700EC5FC3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E34230D67D700EC5FC3 /* NotificationViewController.swift */; };
 		E1AB5E37230D67F600EC5FC3 /* DetailNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB5E36230D67F600EC5FC3 /* DetailNotificationViewController.swift */; };
@@ -37,11 +39,13 @@
 /* Begin PBXFileReference section */
 		688F7B812313B1EB006E3209 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		68D0C79B2313B529003FD659 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		E1045D922313F11E0051D339 /* AssetToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetToImage.swift; sourceTree = "<group>"; };
 		E1A5D717230D53B70031D165 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E1A5D71A230D54030031D165 /* PickUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PickUp.storyboard; sourceTree = "<group>"; };
 		E1A5D71C230D540D0031D165 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		E1A5D71E230D54250031D165 /* ListRecyclable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListRecyclable.storyboard; sourceTree = "<group>"; };
 		E1A5D720230D54300031D165 /* ListPrice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListPrice.storyboard; sourceTree = "<group>"; };
+		E1AAA76B231542300091FFB6 /* DetailImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1AB5E32230D67B800EC5FC3 /* ListRecyclableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecyclableViewController.swift; sourceTree = "<group>"; };
 		E1AB5E34230D67D700EC5FC3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		E1AB5E36230D67F600EC5FC3 /* DetailNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNotificationViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				E1AB5E36230D67F600EC5FC3 /* DetailNotificationViewController.swift */,
 				E1CEA635230E96FD009CDF08 /* ActivityTableViewCell.swift */,
 				E1BB23A4231241CA004DD76D /* DetailActivityTableViewCell.swift */,
+				E1AAA76B231542300091FFB6 /* DetailImageCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			children = (
 				68D0C79B2313B529003FD659 /* Shadow.swift */,
 				E1CEA631230E77AE009CDF08 /* Rounded.swift */,
+				E1045D922313F11E0051D339 /* AssetToImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -383,10 +389,12 @@
 				E1AB5E39230D681800EC5FC3 /* PickUpViewController.swift in Sources */,
 				E1AB5E3B230D68BC00EC5FC3 /* DashboardViewController.swift in Sources */,
 				E1CEA63C230FD2DB009CDF08 /* ListPriceTableViewCell.swift in Sources */,
+				E1045D932313F11E0051D339 /* AssetToImage.swift in Sources */,
 				E1CEA636230E96FD009CDF08 /* ActivityTableViewCell.swift in Sources */,
 				E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */,
 				E1CEA638230FCCAD009CDF08 /* EvidenceCollectionViewCell.swift in Sources */,
 				E1AB5E35230D67D700EC5FC3 /* NotificationViewController.swift in Sources */,
+				E1AAA76C231542300091FFB6 /* DetailImageCollectionViewCell.swift in Sources */,
 				E1BB23A5231241CA004DD76D /* DetailActivityTableViewCell.swift in Sources */,
 				E1CEA62F230E73D3009CDF08 /* SortInfoCollectionViewCell.swift in Sources */,
 				E1AB5E3D230D68E000EC5FC3 /* ProfileViewController.swift in Sources */,
