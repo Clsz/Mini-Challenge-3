@@ -66,11 +66,6 @@ extension NotificationViewController{
         }
     }
     
-    
-//    func fetch(){
-//        let recordID = CKRecord(recordType: "PickUp", recordID: <#T##CKRecord.ID#>
-//        database.fetch(withRecordID: "<#T##CKRecord.ID#>", completionHandler: <#T##(CKRecord?, Error?) -> Void#>)
-//    }
 }
 
 extension NotificationViewController:UITableViewDataSource, UITableViewDelegate{
