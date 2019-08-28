@@ -11,7 +11,7 @@ import UIKit
 class DashboardViewController: UIViewController {
     // Variables
     let cellID = "sortID"
-    var sortImages = [UIImage(named: "plastik"), UIImage(named: "metal"), UIImage(named: "kayu"), UIImage(named: "kaca"), UIImage(named: "kertas")]
+    var sortImages = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
     
     //Outlet
     @IBOutlet weak var sortCollectionView: UICollectionView!
@@ -68,7 +68,7 @@ extension DashboardViewController:UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        
     }
     
 }
