@@ -33,6 +33,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
+        queryDatabase()
     }
     
     
@@ -64,7 +65,7 @@ class ProfileViewController: UIViewController {
                 let pnumber = self.users.first?.value(forKey: "phoneNumber") as! String
                 self.phonenumberLabel.text = "\(pnumber)"
                 self.addressLabel.text = self.users.first?.value(forKey: "address") as? String
-                print("Hehe")
+                print("ANJAYS")
             }
         }
     }
