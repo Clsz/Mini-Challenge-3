@@ -29,10 +29,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        let tempImg = userEdit["image"]  as?  CKAsset
         
         imageEditProfile.setRounded()
         imageIcon.setRounded()
-        
+        imageEditProfile.image =  tempImg?.toUIImage()
         nameEditLabel.text = userEdit["name"]
         emailEditLabel.text = userEdit["email"]
         phoneNumberEditLabel.text = userEdit["phoneNumber"]
@@ -48,11 +49,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     //func edit teks field
     func save(){
+        let newData = self.imageEditProfile.image!.jpegData(compressionQuality: 0.00001)
+        let data = createAsset(data: newData!)
         
         userEdit["name"] = nameEditLabel.text as CKRecordValue
         userEdit["email"] = emailEditLabel.text as CKRecordValue
-        userEdit["address"] = emailEditLabel.text as CKRecordValue
+        userEdit["address"] = addressEditLabel.text as CKRecordValue
         userEdit["phoneNumber"] = phoneNumberEditLabel.text as CKRecordValue
+        userEdit["image"] = data
         
         database.save(userEdit) { (record, error) in
             guard record != nil else { return }
@@ -68,8 +72,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @objc func done (_ sender:UIButton){
+         if  emailEditLabel.text?.isValidEmail() == true {
         save()
         navigationController?.popViewController(animated: true)
+    }
     }
     
     // Function ImageTapped
@@ -95,6 +101,34 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 self.present(actionSheet, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        self.imageEditProfile.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    fileprivate func createAsset(data: Data) -> CKAsset? {
+        
+        var returnAsset: CKAsset? = nil
+        
+        let tempStr = ProcessInfo.processInfo.globallyUniqueString
+        let filename = "\(tempStr)_file.dat"
+        let baseURL = URL(fileURLWithPath: NSTemporaryDirectory())
+        let fileURL = baseURL.appendingPathComponent(filename, isDirectory: false)
+        
+        do {
+            try data.write(to: fileURL, options: [.atomicWrite])
+            returnAsset = CKAsset(fileURL: fileURL)
+        } catch {
+            print("Error creating asset: \(error)")
+        }
+        
+        return returnAsset
+    }
         
 }
 

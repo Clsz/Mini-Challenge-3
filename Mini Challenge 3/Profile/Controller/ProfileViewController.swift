@@ -13,12 +13,13 @@ class ProfileViewController: UIViewController {
    
     let database = CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     var users = [CKRecord]()
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phonenumberLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,14 @@ class ProfileViewController: UIViewController {
         profileImage.setRounded()
         queryDatabase()
     }
+    
+    
 
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let editProfile = segue.destination as! EditProfileViewController
@@ -52,6 +56,9 @@ class ProfileViewController: UIViewController {
             let sortedRecords = records.sorted(by: { $0.creationDate! > $1.creationDate! })
             self.users = sortedRecords
             DispatchQueue.main.async {
+                let tempImg =  self.users.first?.value(forKey: "image") as! CKAsset
+                self.profileImage.image = tempImg.toUIImage()
+                
                 self.nameLabel.text = self.users.first?.value(forKey: "name") as? String
                 self.emailLabel.text = self.users.first?.value(forKey: "email") as? String
                 let pnumber = self.users.first?.value(forKey: "phoneNumber") as! String
@@ -64,7 +71,7 @@ class ProfileViewController: UIViewController {
     
     
     @objc func editProfile(_ sender:UIButton){
-        performSegue(withIdentifier: "gotonextpage", sender: self)
+            performSegue(withIdentifier: "gotonextpage", sender: self)
     }
     
 
