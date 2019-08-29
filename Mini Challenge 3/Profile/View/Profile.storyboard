@@ -221,9 +221,11 @@
                         <outlet property="imageIcon" destination="k2A-NB-2n0" id="SRo-y4-fdG"/>
                         <outlet property="nameEditLabel" destination="dIl-KK-NS3" id="uOs-I5-VOo"/>
                         <outlet property="phoneNumberEditLabel" destination="hVa-Xf-cf1" id="ADW-kK-XmV"/>
+                        <segue destination="cY4-Vw-oov" kind="unwind" identifier="backToProfile" unwindAction="unwindToProfileView:" id="78J-ia-PoM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yj-1z-rnO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cY4-Vw-oov" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1482.608695652174" y="-291.29464285714283"/>
         </scene>

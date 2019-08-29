@@ -28,12 +28,15 @@ class ProfileViewController: UIViewController {
         queryDatabase()
     }
     
-    
-
+    @IBAction func unwindToProfileView(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as? EditProfileViewController
+        print(sourceViewController?.userEdit)
+        // Use data from the view controller which initiated the unwind segue
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
-        queryDatabase()
+//        queryDatabase()
     }
     
     
