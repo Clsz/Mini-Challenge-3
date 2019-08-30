@@ -18,7 +18,10 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     var glassImageArray = [String]()
     var othersImageArray = [String]()
     
+    let cloudDatabase = CKContainer.default().publicCloudDatabase
     var listNamaSampah = [CKRecord]()
+//    var  listJenisSampah = [CKRecord]()
+    
     let  cellList = "listSampah"
     var name = [String]()
     var price = [String]()
@@ -35,7 +38,7 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var listSampahTV: UITableView!
     
     override func viewDidLoad() {
-        //        queryDatabase()
+                queryDatabase()
         self.navigationItem.title = "Recyclable List"
         super.viewDidLoad()
         //       cellDelegate()
@@ -74,7 +77,8 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "LRecyclableTVCell", for: indexPath) as! ListRecyclableTableViewCell
         
-        cell.jenisSampah.text = type[indexPath.row]
+//        cell.jenisSampah.text = type[indexPath.row]
+        cell.jenisSampah.text = listNamaSampah[indexPath.row].value(forKey: "wasteCategory") as? String
         cell.listSampahCV.reloadData()
         
         
@@ -82,17 +86,17 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
         
     }
     
-    //    func queryDatabase() {
-    //        let query = CKQuery(recordType: "Waste", predicate: NSPredicate(value: true))
-    //        CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase.perform(query, inZoneWith: nil) { (records, _) in
-    //            guard let records = records else { return }
-    //            let sortedRecords = records.sorted(by: { $1.modificationDate! > $0.modificationDate! })
-    //            self.listNamaSampah = sortedRecords
-    //            DispatchQueue.main.async {
-    //                self.listSampahTV.reloadData()
-    //            }
-    //        }
-    //    }
+        func queryDatabase() {
+            let query = CKQuery(recordType: "Waste", predicate: NSPredicate(value: true))
+            CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase.perform(query, inZoneWith: nil) { (records, _) in
+                guard let records = records else { return }
+                let sortedRecords = records.sorted(by: { $1.modificationDate! > $0.modificationDate! })
+                self.listNamaSampah = sortedRecords
+                DispatchQueue.main.async {
+                    self.listSampahTV.reloadData()
+                }
+            }
+        }
     
     
 }
