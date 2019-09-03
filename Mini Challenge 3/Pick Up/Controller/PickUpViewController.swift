@@ -24,6 +24,8 @@ class PickUpViewController: UIViewController {
     //Outlets
     @IBOutlet weak var addressTV: UITextView!
     @IBOutlet weak var evidenceCollectionView: UICollectionView!
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
     
     
     override func viewDidLoad() {
@@ -69,6 +71,8 @@ extension PickUpViewController{
         self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.03574425727, green: 0.5716548562, blue: 0.3996006846, alpha: 1)
         self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.03574425727, green: 0.5716548562, blue: 0.3996006846, alpha: 1)
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        view1.pickRound()
+        view2.pickRound()
         addressTV.pickRound()
         addressTV.setShadowView()
     }
@@ -162,7 +166,7 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
         newPickUp["idUser"] = CKRecord.Reference(recordID: userId, action: CKRecord_Reference_Action.none)
         newPickUp["pickUpFrom"] = addressTV.text
         newPickUp["pickUpBy"] = "Bank Sampah Mitra Pusani"
-        newPickUp["pickUpStatus"] = "On-Going"
+        newPickUp["pickUpStatus"] = "Done"
         
         database.save(newPickUp) { (record, error) in
             guard record != nil else {
@@ -191,4 +195,14 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
         
         return returnAsset
     }
+}
+
+extension PickUpViewController : pop{
+    func popToRoot() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+protocol pop {
+    func popToRoot()
 }
