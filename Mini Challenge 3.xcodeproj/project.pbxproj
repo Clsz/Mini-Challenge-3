@@ -12,6 +12,8 @@
 		14A6E8E2231003C20065B06B /* ListRecyclableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6E8E1231003C20065B06B /* ListRecyclableCollectionViewCell.swift */; };
 		14A6E8E523139C4B0065B06B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A6E8E423139C4B0065B06B /* Login.storyboard */; };
 		14A6E8E923139C800065B06B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6E8E823139C800065B06B /* LoginViewController.swift */; };
+		14A6E8EB231ABBC40065B06B /* ListRecyclableExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6E8EA231ABBC40065B06B /* ListRecyclableExampleCollectionViewCell.swift */; };
+		14A6E8ED231ABC970065B06B /* ListRecyclableExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6E8EC231ABC970065B06B /* ListRecyclableExampleViewController.swift */; };
 		688F7B822313B1EB006E3209 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688F7B812313B1EB006E3209 /* EditProfileViewController.swift */; };
 		68D0C79C2313B529003FD659 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D0C79B2313B529003FD659 /* Shadow.swift */; };
 		E1045D932313F11E0051D339 /* AssetToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1045D922313F11E0051D339 /* AssetToImage.swift */; };
@@ -47,6 +49,8 @@
 		14A6E8E1231003C20065B06B /* ListRecyclableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecyclableCollectionViewCell.swift; sourceTree = "<group>"; };
 		14A6E8E423139C4B0065B06B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		14A6E8E823139C800065B06B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		14A6E8EA231ABBC40065B06B /* ListRecyclableExampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecyclableExampleCollectionViewCell.swift; sourceTree = "<group>"; };
+		14A6E8EC231ABC970065B06B /* ListRecyclableExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecyclableExampleViewController.swift; sourceTree = "<group>"; };
 		688F7B812313B1EB006E3209 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		68D0C79B2313B529003FD659 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		E1045D922313F11E0051D339 /* AssetToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetToImage.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 				E1AB5E32230D67B800EC5FC3 /* ListRecyclableViewController.swift */,
 				14A6E8DF231003B00065B06B /* ListRecyclableTableViewCell.swift */,
 				14A6E8E1231003C20065B06B /* ListRecyclableCollectionViewCell.swift */,
+				14A6E8EC231ABC970065B06B /* ListRecyclableExampleViewController.swift */,
+				14A6E8EA231ABBC40065B06B /* ListRecyclableExampleCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				E1045D932313F11E0051D339 /* AssetToImage.swift in Sources */,
 				E1CEA636230E96FD009CDF08 /* ActivityTableViewCell.swift in Sources */,
 				E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */,
+				14A6E8ED231ABC970065B06B /* ListRecyclableExampleViewController.swift in Sources */,
 				E1CEA638230FCCAD009CDF08 /* EvidenceCollectionViewCell.swift in Sources */,
 				E1AB5E35230D67D700EC5FC3 /* NotificationViewController.swift in Sources */,
 				E1AAA76C231542300091FFB6 /* DetailImageCollectionViewCell.swift in Sources */,
@@ -445,6 +452,7 @@
 				14A6E8E923139C800065B06B /* LoginViewController.swift in Sources */,
 				68D0C79C2313B529003FD659 /* Shadow.swift in Sources */,
 				E1CEA63A230FD2BF009CDF08 /* ListPriceViewController.swift in Sources */,
+				14A6E8EB231ABBC40065B06B /* ListRecyclableExampleCollectionViewCell.swift in Sources */,
 				E1AB5E37230D67F600EC5FC3 /* DetailNotificationViewController.swift in Sources */,
 				14A6E8E2231003C20065B06B /* ListRecyclableCollectionViewCell.swift in Sources */,
 			);

@@ -8,19 +8,23 @@
 
 import UIKit
 import CloudKit
+protocol recycleDelegate : AnyObject{
+    func openCity(_ city : String)
+}
 
-class ListRecyclableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ListRecyclableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, recycleDelegate {
     
     
     let cloudDatabase = CKContainer(identifier: "iCloud.Cls.MC3").publicCloudDatabase
-    var listNamaSampah = [CKRecord]()
-    var sampahGambar = [UIImage]()
+    var tempString:String = ""
+    var segueIndex:Int = 0
     
     let  cellList = "listSampah"
     
     var types = ["Plastic", "Paper", "Metal", "Glass", "Others"]
     var contents : [[CKRecord]] = [[], [], [], [], []]
-    var i = 0
+    
+    var dex = 0
     
     @IBOutlet weak var listSampahTV: UITableView!
     
@@ -28,8 +32,8 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
         //                queryDatabase()
         self.navigationItem.title = "Recyclable List"
         super.viewDidLoad()
-        
-        setImage()
+//        
+//        setImage()
         
         for i in  0..<types.count{
             getOne(type: types[i])
@@ -44,7 +48,7 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contents.count
+        return contents.count-1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,39 +56,24 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
  
         cell.jenisSampah.text = types[indexPath.row]
         cell.listSampah = contents[indexPath.row]
-        cell.imageSampah = sampahGambar[indexPath.row]
-        
-        DispatchQueue.main.async {
-            
-            cell.listSampahCV.reloadData()
-        }
+        cell.listSampahCV.reloadData()
+        cell.delegate2 = self
         
         
         return cell
         
     }
     
-    //        func queryDatabase() {
-    //            let query = CKQuery(recordType: "Waste", predicate: NSPredicate(value: true))
-    //            CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase.perform(query, inZoneWith: nil) { (records, _) in
-    //                guard let records = records else { return }
-    //                let sortedRecords = records.sorted(by: { $1.modificationDate! > $0.modificationDate! })
-    //                self.listNamaSampah = sortedRecords
-    //                DispatchQueue.main.async {
-    //                    self.listSampahTV.reloadData()
-    //                }
-    //            }
-    //        }
     
     func getOne(type: String){
         let pred = NSPredicate(format: "wasteCategory IN %@", [type])
         let query = CKQuery(recordType: "Waste", predicate: pred)
-        //        let sort = NSSortDescriptor(key: "lastModifiedUserRecordID", ascending: false)
-        //        query.sortDescriptors = [sort]
+//                let sort = NSSortDescriptor(key: "lastModifiedUserRecordID", ascending: false)
+//                query.sortDescriptors = [sort]
         let queryOperation = CKQueryOperation (query: query)
         queryOperation.recordFetchedBlock = {
             record in
-            print("\(record)")
+//            print("\(record)")
             
             if let i = self.types.firstIndex(of: type){
                 self.contents[i].append(record)
@@ -92,27 +81,50 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
         }
         queryOperation.queryCompletionBlock = {
             queryCursor, error in
+            
             if error != nil {
                 print("\(String(describing: error))")
             }
-            DispatchQueue.main.async {
-                self.listSampahTV.reloadData()
+            
+            self.dex += 1
+            
+            if self.dex == self.types.count {
+                print(self.contents)
+                DispatchQueue.main.async {
+                    self.listSampahTV.reloadData()
+                }
             }
+            
         }
         cloudDatabase.add(queryOperation)
     }
     
-    func setImage(){
-        for i in listNamaSampah {
-            if let data = i["wastePictures"] as? [CKAsset] {
-                for i in data{
-                    if let img = i.toUIImage(){
-                        sampahGambar.append(img)
-                    }
-                }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToExamplePage" {
+            let destination = segue.destination as! ListRecyclableExampleViewController
+            destination.selectedIndex = segueIndex
+        }
+    }
+    
+    
+    func openCity(_ city: String) {
+        print(#function)
+        tempString = city
+        //        print(tempString)
+        if segueIndex >= 0 {
+            selectIndex()
+            performSegue(withIdentifier: "goToExamplePage", sender: self)
+        }
+    }
+    
+    func selectIndex() {
+        for index in 0...contents.count-1 {
+            if tempString == "\(index)" {
+                segueIndex = index
             }
         }
     }
+    
 }
 
 
