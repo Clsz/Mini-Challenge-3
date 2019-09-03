@@ -85,6 +85,7 @@ extension NotificationViewController:UITableViewDataSource, UITableViewDelegate{
         cell.dateLabel.text = (pickups[indexPath.row].value(forKey: "createdAt") as? String)
         cell.pickUpByLabel.text = (pickups[indexPath.row].value(forKey: "pickUpBy") as! String)
         cell.pickUpFrom.text = (pickups[indexPath.row].value(forKey: "pickUpFrom") as! String)
+//        cell.dateLabel.text = pickups[indexPath.row]
         
         cell.outerView.littleRoundView()
         cell.outerView.shadowActivity()
@@ -101,3 +102,4 @@ extension NotificationViewController:UITableViewDataSource, UITableViewDelegate{
     }
     
 }
+
