@@ -18,13 +18,14 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     let cloudDatabase = CKContainer(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     var tempString:String = ""
     var segueIndex:Int = 0
-    
-    let  cellList = "listSampah"
-    
+    let cellList = "listSampah"
+    var listSampah = [CKRecord]()
     var types = ["Plastic", "Paper", "Metal", "Glass", "Others"]
     var contents : [[CKRecord]] = [[], [], [], [], []]
-    
     var dex = 0
+    var  indexx:Int?
+    
+
     
     @IBOutlet weak var listSampahTV: UITableView!
     
@@ -57,6 +58,7 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
         cell.jenisSampah.text = types[indexPath.row]
         cell.listSampah = contents[indexPath.row]
         cell.listSampahCV.reloadData()
+        
         cell.delegate2 = self
         
         
@@ -100,11 +102,20 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToExamplePage" {
-            let destination = segue.destination as! ListRecyclableExampleViewController
-            destination.selectedIndex = segueIndex
-        }
+//        let sampahExample = segue.destination as! ListRecyclableExampleViewController
+//        if let indexPath = listSampah.indexPathForSelectedRow{
+//            let sampah = listSampah[indexPath.row]
+//            sampahExample.objListSampah = sampah
+//        }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let detailNotification = segue.destination as! DetailNotificationViewController
+//        if let indexPath = pickUpTV.indexPathForSelectedRow{
+//            let sampah = pickups[indexPath.row]
+//            detailNotification.objPickUp = sampah
+//        }
+//    }
     
     
     func openCity(_ city: String) {
