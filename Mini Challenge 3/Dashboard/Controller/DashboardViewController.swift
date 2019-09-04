@@ -9,9 +9,12 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
+    
+    
     // Variables
     let cellID = "sortID"
-    var sortImages = [UIImage(named: "plastik"), UIImage(named: "metal"), UIImage(named: "kayu"), UIImage(named: "kaca"), UIImage(named: "kertas")]
+    var sortImages = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
+    var a:AcceptedViewController?
     
     //Outlet
     @IBOutlet weak var sortCollectionView: UICollectionView!
@@ -28,11 +31,23 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         cellDelegate()
         setView()
+        
     }
     
-    @IBAction func notifTapped(_ sender: UIButton) {
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
     
+    @IBAction func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
+        if let sourceViewController = unwindSegue.source as? AcceptedViewController{
+            return
+        }
+    }
+    
+    func popToRoot(_ sender:String) {
+        navigationController?.popToRootViewController(animated: true)
+        print(sender)
+    }
 }
 extension DashboardViewController{
     func setView(){
@@ -64,7 +79,6 @@ extension DashboardViewController:UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        
     }
-    
 }

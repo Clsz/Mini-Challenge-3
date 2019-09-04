@@ -51,11 +51,57 @@ extension UIView {
         self.clipsToBounds = false
     }
     
+    func pickRound(){
+        self.layer.cornerRadius = 13
+        self.clipsToBounds = false
+    }
+    
+    func statusRound(){
+        self.layer.cornerRadius = 14.5
+        self.clipsToBounds = false
+    }
+    
+    func acceptRound(){
+        self.layer.cornerRadius = 21
+        self.clipsToBounds = false
+    }
+    
+    func accRound(){
+        self.layer.cornerRadius = 23
+        self.clipsToBounds = false
+    }
+    
+    func viewPickUp(){
+        self.layer.cornerRadius = 6
+        self.clipsToBounds = false
+    }
+    
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+}
+
+extension UITextField{
+    
+    func roundPick(){
+        self.layer.cornerRadius = 6
+        self.clipsToBounds = false
+    }
 }
 
 extension UIButton{
     func littleRoundButton(){
         self.layer.cornerRadius = 12
         self.clipsToBounds = false
+    }
+}
+
+extension String {
+    func isValidEmail() -> Bool {
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
 }

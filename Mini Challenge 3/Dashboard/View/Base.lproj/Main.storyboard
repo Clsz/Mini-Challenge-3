@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BNz-1j-usA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jBw-iG-C4P">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0nf-5Q-aei">
-                                <rect key="frame" x="18" y="165" width="374" height="95"/>
+                                <rect key="frame" x="20" y="165" width="374" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqa-h9-hJv" userLabel="Account Pembatas">
@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-KQ-Ujk">
-                                <rect key="frame" x="18" y="272" width="374" height="216"/>
+                                <rect key="frame" x="20" y="272" width="374" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.50980392159999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx7-5d-EgJ">
-                                <rect key="frame" x="18" y="492" width="185" height="95"/>
+                                <rect key="frame" x="20" y="491" width="186" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.50980392159999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gns-be-JgG">
-                                <rect key="frame" x="207" y="492" width="185" height="95"/>
+                                <rect key="frame" x="209" y="491" width="185" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.50980392159999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -88,7 +88,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="255" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3aD-Td-HPg">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3aD-Td-HPg">
                                                     <rect key="frame" x="0.0" y="0.0" width="255" height="139"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -107,7 +107,6 @@
                                     <color key="titleColor" red="0.99215686270000003" green="0.60392156860000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="notifTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDI-vm-PNX"/>
                                     <segue destination="PPP-ZC-Fe6" kind="show" id="G6W-pI-Fo6"/>
                                 </connections>
                             </button>
@@ -169,12 +168,12 @@
                                 <rect key="frame" x="324" y="520" width="57" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ovH-I2-aaO">
-                                <rect key="frame" x="18" y="165" width="95" height="95"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="ovH-I2-aaO">
+                                <rect key="frame" x="20" y="165" width="95" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fey-IW-d0a">
-                                <rect key="frame" x="21" y="110" width="160" height="40"/>
+                                <rect key="frame" x="20" y="110" width="160" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                 <nil key="textColor"/>
@@ -184,7 +183,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="10r-Wc-Zeu"/>
+                    <navigationItem key="navigationItem" id="10r-Wc-Zeu">
+                        <barButtonItem key="backBarButtonItem" title="                   " id="yiU-II-5hg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountBar" destination="Nqa-h9-hJv" id="NKh-AQ-Mb1"/>
                         <outlet property="accountPlace" destination="0nf-5Q-aei" id="hB0-tG-OWS"/>
@@ -198,14 +199,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1111.5942028985507" y="129.91071428571428"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="fHd-wq-bn6">
-            <objects>
-                <viewControllerPlaceholder id="Bau-Rq-ceT" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xdE-Fv-6IY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1917" y="-115"/>
         </scene>
         <!--Notification-->
         <scene sceneID="f45-gV-laG">
@@ -231,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="2044" y="54"/>
         </scene>
-        <!--ListPrice-->
+        <!--ListPrices-->
         <scene sceneID="rcs-SG-GmB">
             <objects>
-                <viewControllerPlaceholder storyboardName="ListPrice" id="91Y-Ui-jAO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ListPrices" id="91Y-Ui-jAO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XE-KQ-ccX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2048" y="103"/>
@@ -246,6 +239,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrx-FL-jwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2047" y="147"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3op-0e-2Oz">
+            <objects>
+                <viewController id="jBw-iG-C4P" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6m-5a-6K6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LXl-Fh-IZc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rn-sf-9u8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1433" y="130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GGf-QU-3sd">
@@ -267,8 +275,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Profile" width="512" height="512"/>
         <image name="garbage-truck" width="139" height="135"/>
         <image name="notification" width="27" height="32"/>
         <image name="recycle-bin" width="57" height="57"/>
     </resources>
+    <color key="tintColor" red="0.078431372550000003" green="0.50980392159999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>
