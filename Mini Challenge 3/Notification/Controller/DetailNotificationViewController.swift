@@ -46,7 +46,7 @@ class DetailNotificationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setLabel()
         setView()
-        setImage()
+//        setImage()
     }
     
 }
@@ -67,6 +67,7 @@ extension DetailNotificationViewController{
     
     func setImage(){
         if let data = objPickUp?["photoEvidence"] as? [CKAsset]{
+            tempImage.removeAll()
             for i in data{
                 if let img = i.toUIImage(){
                     tempImage.append(img)
@@ -75,9 +76,6 @@ extension DetailNotificationViewController{
         }
     }
     
-    func setTotal(){
-        
-    }
     
     @objc func queryDatabase() {
         let query = CKQuery(recordType: "detailPickUp", predicate: NSPredicate(value: true))

@@ -11,6 +11,8 @@ import UIKit
 class AcceptedViewController: UIViewController {
     
     
+    let segue = "backToRoot"
+    
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var viewOutter: UIView!
     override func viewDidLoad() {
@@ -21,5 +23,6 @@ class AcceptedViewController: UIViewController {
     }
     
     @IBAction func okTapped(_ sender: UIButton) {
+       performSegue(withIdentifier: segue, sender: nil)
     }
 }

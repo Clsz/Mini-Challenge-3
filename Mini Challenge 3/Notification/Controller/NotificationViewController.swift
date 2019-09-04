@@ -46,7 +46,7 @@ class NotificationViewController: UIViewController {
 extension NotificationViewController{
     func refresh(){
         let refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: "Refresh")
         refreshControl.addTarget(self, action: #selector(queryDatabase), for: .valueChanged)
         self.pickUpTV.refreshControl = refreshControl
     }

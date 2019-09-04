@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BNz-1j-usA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jBw-iG-C4P">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -107,7 +107,6 @@
                                     <color key="titleColor" red="0.99215686270000003" green="0.60392156860000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="notifTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDI-vm-PNX"/>
                                     <segue destination="PPP-ZC-Fe6" kind="show" id="G6W-pI-Fo6"/>
                                 </connections>
                             </button>
@@ -240,6 +239,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrx-FL-jwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2047" y="147"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3op-0e-2Oz">
+            <objects>
+                <viewController id="jBw-iG-C4P" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6m-5a-6K6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LXl-Fh-IZc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rn-sf-9u8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1433" y="130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GGf-QU-3sd">

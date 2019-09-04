@@ -84,6 +84,14 @@ extension UIView {
     }
 }
 
+extension UITextField{
+    
+    func roundPick(){
+        self.layer.cornerRadius = 6
+        self.clipsToBounds = false
+    }
+}
+
 extension UIButton{
     func littleRoundButton(){
         self.layer.cornerRadius = 12
