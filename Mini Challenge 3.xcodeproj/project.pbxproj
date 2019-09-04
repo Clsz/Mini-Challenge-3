@@ -37,6 +37,9 @@
 		E1CEA638230FCCAD009CDF08 /* EvidenceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEA637230FCCAD009CDF08 /* EvidenceCollectionViewCell.swift */; };
 		E1CEA63A230FD2BF009CDF08 /* ListPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEA639230FD2BF009CDF08 /* ListPriceViewController.swift */; };
 		E1CEA63C230FD2DB009CDF08 /* ListPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEA63B230FD2DB009CDF08 /* ListPriceTableViewCell.swift */; };
+		E1F95172231FC99900CD1E26 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F95171231FC99900CD1E26 /* OnBoardingViewController.swift */; };
+		E1F95174231FC9B700CD1E26 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F95173231FC9B700CD1E26 /* Slide.xib */; };
+		E1F95176231FCA5E00CD1E26 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F95175231FCA5E00CD1E26 /* Slide.swift */; };
 		E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5550230D51C700F98225 /* AppDelegate.swift */; };
 		E1FC5556230D51C700F98225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5554230D51C700F98225 /* Main.storyboard */; };
 		E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5557230D51C800F98225 /* Assets.xcassets */; };
@@ -75,6 +78,9 @@
 		E1CEA637230FCCAD009CDF08 /* EvidenceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1CEA639230FD2BF009CDF08 /* ListPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPriceViewController.swift; sourceTree = "<group>"; };
 		E1CEA63B230FD2DB009CDF08 /* ListPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPriceTableViewCell.swift; sourceTree = "<group>"; };
+		E1F95171231FC99900CD1E26 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		E1F95173231FC9B700CD1E26 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		E1F95175231FCA5E00CD1E26 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		E1FC554D230D51C700F98225 /* Mini Challenge 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FC5550230D51C700F98225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1FC5555230D51C700F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -176,8 +182,10 @@
 		E1AB5E23230D66A500EC5FC3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E1F95170231FC93C00CD1E26 /* Xib */,
 				E1AB5E3A230D68BC00EC5FC3 /* DashboardViewController.swift */,
 				E1CEA62E230E73D3009CDF08 /* SortInfoCollectionViewCell.swift */,
+				E1F95171231FC99900CD1E26 /* OnBoardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -304,6 +312,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		E1F95170231FC93C00CD1E26 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				E1F95173231FC9B700CD1E26 /* Slide.xib */,
+				E1F95175231FCA5E00CD1E26 /* Slide.swift */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		E1FC5544230D51C700F98225 = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +437,7 @@
 				E1A5D71F230D54250031D165 /* ListRecyclable.storyboard in Resources */,
 				14A6E8DE230FEB8B0065B06B /* ListPrices.storyboard in Resources */,
 				E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */,
+				E1F95174231FC9B700CD1E26 /* Slide.xib in Resources */,
 				E1A5D718230D53B70031D165 /* Profile.storyboard in Resources */,
 				E1FC5556230D51C700F98225 /* Main.storyboard in Resources */,
 				E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */,
@@ -453,10 +471,12 @@
 				E1AB5E3D230D68E000EC5FC3 /* ProfileViewController.swift in Sources */,
 				E1AB5E33230D67B800EC5FC3 /* ListRecyclableViewController.swift in Sources */,
 				E1CEA632230E77AE009CDF08 /* Rounded.swift in Sources */,
+				E1F95172231FC99900CD1E26 /* OnBoardingViewController.swift in Sources */,
 				14A6E8E923139C800065B06B /* LoginViewController.swift in Sources */,
 				68D0C79C2313B529003FD659 /* Shadow.swift in Sources */,
 				E1CEA63A230FD2BF009CDF08 /* ListPriceViewController.swift in Sources */,
 				14A6E8EB231ABBC40065B06B /* ListRecyclableExampleCollectionViewCell.swift in Sources */,
+				E1F95176231FCA5E00CD1E26 /* Slide.swift in Sources */,
 				E1AB5E37230D67F600EC5FC3 /* DetailNotificationViewController.swift in Sources */,
 				14A6E8E2231003C20065B06B /* ListRecyclableCollectionViewCell.swift in Sources */,
 			);

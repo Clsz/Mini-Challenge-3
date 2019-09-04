@@ -172,8 +172,8 @@
                                 <rect key="frame" x="20" y="165" width="95" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fey-IW-d0a">
-                                <rect key="frame" x="20" y="110" width="160" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Up Trash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fey-IW-d0a">
+                                <rect key="frame" x="20" y="110" width="137" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                 <nil key="textColor"/>
@@ -240,20 +240,41 @@
             </objects>
             <point key="canvasLocation" x="2047" y="147"/>
         </scene>
-        <!--View Controller-->
+        <!--On Boarding View Controller-->
         <scene sceneID="3op-0e-2Oz">
             <objects>
-                <viewController id="jBw-iG-C4P" sceneMemberID="viewController">
+                <viewController id="jBw-iG-C4P" customClass="OnBoardingViewController" customModule="Mini_Challenge_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k6m-5a-6K6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="o6v-Zp-dP0">
+                                <rect key="frame" x="187.5" y="744" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.30158578088933535" green="0.67409581218274117" blue="0.28771287005732371" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nwe-lP-xrQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o6v-Zp-dP0" firstAttribute="top" secondItem="LXl-Fh-IZc" secondAttribute="top" constant="700" id="DOD-8R-hCP"/>
+                            <constraint firstItem="o6v-Zp-dP0" firstAttribute="centerX" secondItem="k6m-5a-6K6" secondAttribute="centerX" id="WRi-65-LbS"/>
+                            <constraint firstItem="o6v-Zp-dP0" firstAttribute="centerY" secondItem="k6m-5a-6K6" secondAttribute="centerY" id="kRZ-5i-3Mb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LXl-Fh-IZc"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="o6v-Zp-dP0" id="lr0-k1-lkj"/>
+                        <outlet property="scrollView" destination="Nwe-lP-xrQ" id="T67-96-gzK"/>
+                        <segue destination="BNz-1j-usA" kind="show" identifier="segueToMainVC" id="3rq-AD-oIN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rn-sf-9u8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1433" y="130"/>
+            <point key="canvasLocation" x="368" y="-589"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GGf-QU-3sd">
@@ -276,7 +297,7 @@
     </scenes>
     <resources>
         <image name="Profile" width="512" height="512"/>
-        <image name="garbage-truck" width="139" height="135"/>
+        <image name="garbage-truck" width="226" height="219"/>
         <image name="notification" width="27" height="32"/>
         <image name="recycle-bin" width="57" height="57"/>
     </resources>
