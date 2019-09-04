@@ -38,11 +38,12 @@ class ListRecyclableExampleViewController: UIViewController {
         super.viewDidLoad()
         queryDatabase()
         setLabel()
-//        setImage()
+        setImage()
         setTitleImage()
         print("Lol")
         cellDelegate()
         buttonBack.setRoundedView()
+        buttonBack.setShadowButton()
         
         gambarSampah.roundCorners([.bottomRight], radius: 74)
         kotakHitam.roundCorners([.bottomRight], radius: 74)
@@ -88,6 +89,7 @@ class ListRecyclableExampleViewController: UIViewController {
     
     func setImage(){
         if let data = objListSampah?["wastePictureExample"] as? [CKAsset]{
+            contohImageSampah.removeAll()
             for i in data{
                 if let img = i.toUIImage(){
                     contohImageSampah.append(img)
@@ -99,7 +101,7 @@ class ListRecyclableExampleViewController: UIViewController {
 
 extension ListRecyclableExampleViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listContohSampah.count
+        return contohImageSampah.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,16 +113,8 @@ extension ListRecyclableExampleViewController: UICollectionViewDataSource, UICol
 //            let img = data.first?.toUIImage() {
 //            cell.gambarExample.image = img
 //        }
-        if let data = objListSampah?["wastePictureExample"] as? [CKAsset]{
-            for i in data{
-                if let img = i.toUIImage(){
-                    contohImageSampah.append(img)
-                    cell.gambarExample.image = img
-                }
-            }
-        }
         
-        
+        cell.gambarExample.image = contohImageSampah[indexPath.row]
         
         return cell
     }
