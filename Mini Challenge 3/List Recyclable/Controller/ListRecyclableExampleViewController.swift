@@ -35,8 +35,19 @@ class ListRecyclableExampleViewController: UIViewController {
         super.viewDidLoad()
         queryDatabase()
         setLabel()
+        setImage()
+        setTitleImage()
         print("Lol")
         cellDelegate()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    
+    @IBAction func buttonBack(_ sender: Any) {
         
     }
     
@@ -59,8 +70,9 @@ class ListRecyclableExampleViewController: UIViewController {
     }
     
     func setLabel(){
-        namaSampah.text = objListSampah?["wasteName"]
-        hargaSampah.text = objListSampah?["wastePrice"]
+        var harga = objListSampah?.value(forKey: "wastePrice") as! Int
+        namaSampah.text = objListSampah?.value(forKey: "wasteName") as! String
+        hargaSampah.text = "Rp.\(harga ?? 0),-/kg"
     }
     
     func setTitleImage(){

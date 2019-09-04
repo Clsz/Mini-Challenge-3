@@ -8,15 +8,15 @@
 
 import UIKit
 import CloudKit
+
 protocol recycleDelegate : AnyObject{
-    func openCity(_ city : String)
+    func openCity(_ city : CKRecord)
 }
 
 class ListRecyclableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, recycleDelegate {
     
     
     let cloudDatabase = CKContainer(identifier: "iCloud.Cls.MC3").publicCloudDatabase
-    var tempString:String = ""
     var segueIndex:Int = 0
     let cellList = "listSampah"
     var listSampah = [CKRecord]()
@@ -24,7 +24,7 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     var contents : [[CKRecord]] = [[], [], [], [], []]
     var dex = 0
     var  indexx:Int?
-    
+    var tempCity : CKRecord?
 
     
     @IBOutlet weak var listSampahTV: UITableView!
@@ -68,14 +68,16 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     
     
     func getOne(type: String){
+        print(#function)
         let pred = NSPredicate(format: "wasteCategory IN %@", [type])
         let query = CKQuery(recordType: "Waste", predicate: pred)
 //                let sort = NSSortDescriptor(key: "lastModifiedUserRecordID", ascending: false)
 //                query.sortDescriptors = [sort]
         let queryOperation = CKQueryOperation (query: query)
+//        queryOperation.desiredKeys = ["wasteName"]
         queryOperation.recordFetchedBlock = {
             record in
-//            print("\(record)")
+            print(record)
             
             if let i = self.types.firstIndex(of: type){
                 self.contents[i].append(record)
@@ -102,10 +104,11 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let sampahExample = segue.destination as! ListRecyclableExampleViewController
+        let sampahExample = segue.destination as! ListRecyclableExampleViewController
+        
 //        if let indexPath = listSampah.indexPathForSelectedRow{
-//            let sampah = listSampah[indexPath.row]
-//            sampahExample.objListSampah = sampah
+            let sampah = tempCity
+            sampahExample.objListSampah = sampah
 //        }
     }
     
@@ -118,23 +121,22 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
 //    }
     
     
-    func openCity(_ city: String) {
-        print(#function)
-        tempString = city
+    func openCity(_ city: CKRecord) {
+        tempCity = city
         //        print(tempString)
-        if segueIndex >= 0 {
-            selectIndex()
+//        if segueIndex >= 0 {
+//            selectIndex()
             performSegue(withIdentifier: "goToExamplePage", sender: self)
-        }
+//        }
     }
-    
-    func selectIndex() {
-        for index in 0...contents.count-1 {
-            if tempString == "\(index)" {
-                segueIndex = index
-            }
-        }
-    }
+//
+//    func selectIndex() {
+//        for index in 0...contents.count-1 {
+//            if tempString == "\(index)" {
+//                segueIndex = index
+//            }
+//        }
+//    }
     
 }
 

@@ -156,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-05-BX9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-05-BX9">
                                 <rect key="frame" x="-42" y="-136" width="456" height="640"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -164,9 +164,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1am-hB-sVd">
-                                <rect key="frame" x="20" y="395" width="374" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1am-hB-sVd">
+                                <rect key="frame" x="20" y="395" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -225,6 +225,14 @@
                                     <outlet property="delegate" destination="gpQ-sf-xK4" id="mgV-g3-cC9"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc0-3T-Pr9">
+                                <rect key="frame" x="20" y="44" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonBack:" destination="gpQ-sf-xK4" eventType="touchUpInside" id="z7x-tI-06z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -237,16 +245,15 @@
                             <constraint firstItem="3PY-GS-YYw" firstAttribute="leading" secondItem="qOD-BB-RKL" secondAttribute="leading" constant="20" id="Q6q-C1-gRm"/>
                             <constraint firstItem="XiD-05-BX9" firstAttribute="leading" secondItem="a6P-b6-QIi" secondAttribute="leading" constant="-42" id="Sg3-Hw-Utb"/>
                             <constraint firstItem="qOD-BB-RKL" firstAttribute="trailing" secondItem="1am-hB-sVd" secondAttribute="trailing" constant="20" id="Tsq-hu-yEi"/>
+                            <constraint firstItem="Qhc-uO-5bG" firstAttribute="top" secondItem="1am-hB-sVd" secondAttribute="bottom" constant="20" id="U9w-mB-ZYa"/>
                             <constraint firstItem="1am-hB-sVd" firstAttribute="leading" secondItem="qOD-BB-RKL" secondAttribute="leading" constant="20" id="Xwc-I2-iIV"/>
                             <constraint firstItem="PfN-OF-HS5" firstAttribute="trailing" secondItem="qOD-BB-RKL" secondAttribute="trailing" id="Y8w-0I-IjG"/>
                             <constraint firstItem="qOD-BB-RKL" firstAttribute="bottom" secondItem="3PY-GS-YYw" secondAttribute="bottom" constant="291" id="YLh-5b-dzQ"/>
                             <constraint firstItem="qOD-BB-RKL" firstAttribute="trailing" secondItem="Qhc-uO-5bG" secondAttribute="trailing" constant="20" id="a1E-Pc-gIk"/>
                             <constraint firstItem="XiD-05-BX9" firstAttribute="trailing" secondItem="qOD-BB-RKL" secondAttribute="trailing" id="bCK-4f-Pl4"/>
-                            <constraint firstItem="Qhc-uO-5bG" firstAttribute="top" secondItem="1am-hB-sVd" secondAttribute="bottom" constant="8" id="eau-Mq-9c1"/>
                             <constraint firstItem="1am-hB-sVd" firstAttribute="top" secondItem="qOD-BB-RKL" secondAttribute="top" constant="351" id="iK6-K3-D5F"/>
                             <constraint firstItem="qOD-BB-RKL" firstAttribute="trailing" secondItem="3PY-GS-YYw" secondAttribute="trailing" constant="277" id="miL-RG-i3J"/>
                             <constraint firstAttribute="bottom" secondItem="PfN-OF-HS5" secondAttribute="bottom" id="v0f-mo-K0t"/>
-                            <constraint firstItem="qOD-BB-RKL" firstAttribute="bottom" secondItem="Qhc-uO-5bG" secondAttribute="bottom" constant="394" id="zfC-0F-X07"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qOD-BB-RKL"/>
                     </view>

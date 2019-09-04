@@ -9,16 +9,13 @@
 import UIKit
 import CloudKit
 
-class ListRecyclableTableViewCell: UITableViewCell, recycleDelegate {
-    func openCity(_ city: String) {
-        
-    }
+class ListRecyclableTableViewCell: UITableViewCell {
     
     var listSampah = [CKRecord]()
     var imageSampah = [UIImage]()
     let cloudDatabase = CKContainer(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     weak var delegate2 : recycleDelegate?
-    var openCity : String?
+    var openCity : CKRecord?
     
     @IBOutlet weak var listSampahCV: UICollectionView!
     @IBOutlet weak var jenisSampah: UILabel!
@@ -77,7 +74,7 @@ extension ListRecyclableTableViewCell:UICollectionViewDataSource,UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LRecyclableCVCell", for: indexPath) as! ListRecyclableCollectionViewCell
         
-        let harga = listSampah[indexPath.row].value(forKey: "wastePrice") as? Double
+        let harga = listSampah[indexPath.row].value(forKey: "wastePrice") as? Int
         cell.hargaSampah.text = "Rp.\(harga ?? 0),-/kg"
         cell.namaSampah.text = listSampah[indexPath.row].value(forKey: "wasteName") as? String
 //        cell.gambarSampah.image = imageSampah[indexPath.row]
@@ -100,13 +97,7 @@ extension ListRecyclableTableViewCell:UICollectionViewDataSource,UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openCity = "\(indexPath.row)"
-        open()
-    }
-    
-    
-    func open(){
-        delegate2!.openCity(openCity!)
+        delegate2!.openCity(listSampah[indexPath.row])
     }
     
 }
