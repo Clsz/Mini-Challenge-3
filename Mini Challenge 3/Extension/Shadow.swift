@@ -38,6 +38,17 @@ extension UIView{
     }
 }
 
+extension UITextField{
+    func shadows(){
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowRadius = 3
+        self.layer.shouldRasterize = true
+    }
+}
+
 extension UIButton{
     func setShadowButton(){
         self.layer.masksToBounds = false

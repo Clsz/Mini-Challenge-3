@@ -8,10 +8,14 @@
 
 import UIKit
 import CloudKit
+
+
+
 class PickUpViewController: UIViewController {
     
     // Variables
     let segue = "goToAccept"
+    let segue1 = "goToMap"
     var imageEvidence = [UIImage]()
     var tempImage = [CKAsset]()
     let cellID = "evidenceID"
@@ -22,7 +26,7 @@ class PickUpViewController: UIViewController {
     let flexiblea = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     
     //Outlets
-    @IBOutlet weak var addressTV: UITextView!
+    @IBOutlet weak var addressTF: UITextField!
     @IBOutlet weak var evidenceCollectionView: UICollectionView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
@@ -34,6 +38,7 @@ class PickUpViewController: UIViewController {
         imageEvidence.append(UIImage(named: "Add")!)
         setView()
         setDoneOnKeyboard()
+        addGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +53,13 @@ class PickUpViewController: UIViewController {
         request()
     }
     
-    
+    @IBAction func unwindToPickup(_ unwindSegue: UIStoryboardSegue) {
+        if let sourceViewController = unwindSegue.source as? SelectMapViewController{
+            if let a = sourceViewController.mapAddress.text{
+                addressTF.text = a
+            }
+        }
+    }
 }
 extension PickUpViewController{
     func saveUser(){
@@ -73,8 +84,8 @@ extension PickUpViewController{
         self.navigationController?.navigationBar.prefersLargeTitles = true
         view1.pickRound()
         view2.pickRound()
-        addressTV.pickRound()
-        addressTV.setShadowView()
+        addressTF.roundPick()
+        addressTF.shadows()
     }
     
     func setDoneOnKeyboard() {
@@ -83,13 +94,23 @@ extension PickUpViewController{
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(PickUpViewController.dismissKeyboard))
         keyboardToolbar.items = [flexBarButton, doneBarButton]
-        self.addressTV.inputAccessoryView = keyboardToolbar
+        self.addressTF.inputAccessoryView = keyboardToolbar
     }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+        
+    func addGesture(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addressTapped(tapGesture:)))
+            
+        addressTF.isUserInteractionEnabled = true
+        addressTF.addGestureRecognizer(tapGesture)
+    }
     
+    @objc func addressTapped(tapGesture: UITapGestureRecognizer){
+        performSegue(withIdentifier: segue1, sender: nil)
+    }
     
 }
 
@@ -138,7 +159,9 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        self.imageEvidence.insert(image, at: 1)
+//        self.imageEvidence.removeAll()
+        self.imageEvidence.append(image)
+        print("after picked: \(imageEvidence.count)")
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -147,24 +170,24 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func request(){
-        
-        for i in imageEvidence{
-            if i != imageEvidence[0] && i != imageEvidence.last{
-                if let newData = i.jpegData(compressionQuality: 0.00001){
+        print("origin data: \(imageEvidence.count)")
+        for (index, item) in imageEvidence.enumerated(){
+            if index > 0 {
+                if let newData = item.jpegData(compressionQuality: 0.00001){
                     if let data = createAsset(data: newData){
                         tempImage.append(data)
                     }
                 }
             }
         }
-        
+        print("modified data: \(tempImage.count)")
         //Get Referemce
         let userId = CKRecord.ID(recordName: "4DD23698-1376-452F-9FA8-06C63E1E6D85")
         
         let newPickUp = CKRecord(recordType: "PickUp")
         newPickUp["photoEvidence"] = tempImage
         newPickUp["idUser"] = CKRecord.Reference(recordID: userId, action: CKRecord_Reference_Action.none)
-        newPickUp["pickUpFrom"] = addressTV.text
+        newPickUp["pickUpFrom"] = addressTF.text
         newPickUp["pickUpBy"] = "Bank Sampah Mitra Pusani"
         newPickUp["pickUpStatus"] = "Done"
         
@@ -172,7 +195,7 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
             guard record != nil else {
                 print("error", error)
                 return }
-            print("saved request")
+            print("saved request with data: \(record!["photoEvidence"])")
             
         }
     }
@@ -197,12 +220,3 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
     }
 }
 
-extension PickUpViewController : pop{
-    func popToRoot() {
-        navigationController?.popToRootViewController(animated: true)
-    }
-}
-
-protocol pop {
-    func popToRoot()
-}
