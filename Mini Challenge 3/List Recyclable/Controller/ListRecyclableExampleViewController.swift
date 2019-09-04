@@ -20,6 +20,9 @@ class ListRecyclableExampleViewController: UIViewController {
     @IBOutlet weak var gambarSampah: UIImageView!
     @IBOutlet weak var listExample: UICollectionView!
     
+    @IBOutlet weak var kotakHitam: UIView!
+    @IBOutlet weak var buttonBack: UIButton!
+    
     var listContohSampah = [CKRecord]()
     var contohImageSampah = [UIImage]()
     let cloudDatabase = CKContainer(identifier: "iCloud.Cls.MC3").publicCloudDatabase
@@ -35,10 +38,14 @@ class ListRecyclableExampleViewController: UIViewController {
         super.viewDidLoad()
         queryDatabase()
         setLabel()
-        setImage()
+//        setImage()
         setTitleImage()
         print("Lol")
         cellDelegate()
+        buttonBack.setRoundedView()
+        
+        gambarSampah.roundCorners([.bottomRight], radius: 74)
+        kotakHitam.roundCorners([.bottomRight], radius: 74)
         
     }
     
@@ -46,9 +53,8 @@ class ListRecyclableExampleViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    
     @IBAction func buttonBack(_ sender: Any) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func queryDatabase() {
@@ -101,9 +107,17 @@ extension ListRecyclableExampleViewController: UICollectionViewDataSource, UICol
         
 //        cell.gambarExample.image = imagee[indexPath.row]
         
-        if let data = listContohSampah[indexPath.row].value(forKey: "wastePictureExample") as? [CKAsset],
-            let img = data.first?.toUIImage() {
-            cell.gambarExample.image = img
+//        if let data = listContohSampah[indexPath.row].value(forKey: "wastePictureExample") as? [CKAsset],
+//            let img = data.first?.toUIImage() {
+//            cell.gambarExample.image = img
+//        }
+        if let data = objListSampah?["wastePictureExample"] as? [CKAsset]{
+            for i in data{
+                if let img = i.toUIImage(){
+                    contohImageSampah.append(img)
+                    cell.gambarExample.image = img
+                }
+            }
         }
         
         

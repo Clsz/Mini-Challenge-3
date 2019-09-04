@@ -24,6 +24,8 @@ class ListRecyclableTableViewCell: UITableViewCell {
         listSampahCV.delegate = self
         listSampahCV.dataSource = self
         
+        
+        
         super.awakeFromNib()
     }
     
