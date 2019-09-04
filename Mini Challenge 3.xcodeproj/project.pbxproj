@@ -40,6 +40,7 @@
 		E1F95172231FC99900CD1E26 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F95171231FC99900CD1E26 /* OnBoardingViewController.swift */; };
 		E1F95174231FC9B700CD1E26 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F95173231FC9B700CD1E26 /* Slide.xib */; };
 		E1F95176231FCA5E00CD1E26 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F95175231FCA5E00CD1E26 /* Slide.swift */; };
+		E1F95178231FE13300CD1E26 /* 1.MOV in Resources */ = {isa = PBXBuildFile; fileRef = E1F95177231FE13300CD1E26 /* 1.MOV */; };
 		E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5550230D51C700F98225 /* AppDelegate.swift */; };
 		E1FC5556230D51C700F98225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5554230D51C700F98225 /* Main.storyboard */; };
 		E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5557230D51C800F98225 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		E1F95171231FC99900CD1E26 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		E1F95173231FC9B700CD1E26 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		E1F95175231FCA5E00CD1E26 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		E1F95177231FE13300CD1E26 /* 1.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 1.MOV; path = ../../Downloads/1.MOV; sourceTree = "<group>"; };
 		E1FC554D230D51C700F98225 /* Mini Challenge 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Challenge 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FC5550230D51C700F98225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1FC5555230D51C700F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		E1FC5544230D51C700F98225 = {
 			isa = PBXGroup;
 			children = (
+				E1F95177231FE13300CD1E26 /* 1.MOV */,
 				E1FC554F230D51C700F98225 /* Mini Challenge 3 */,
 				E1FC554E230D51C700F98225 /* Products */,
 				E1FC5563230D521700F98225 /* Frameworks */,
@@ -442,6 +445,7 @@
 				E1FC5556230D51C700F98225 /* Main.storyboard in Resources */,
 				E1A5D71D230D540D0031D165 /* Notification.storyboard in Resources */,
 				14A6E8E523139C4B0065B06B /* Login.storyboard in Resources */,
+				E1F95178231FE13300CD1E26 /* 1.MOV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -60,13 +60,16 @@ class ProfileViewController: UIViewController {
             let sortedRecords = records.sorted(by: { $0.creationDate! > $1.creationDate! })
             self.users = sortedRecords
             DispatchQueue.main.async {
-                let tempImg =  self.users.first?.value(forKey: "image") as! CKAsset
-                self.profileImage.image = tempImg.toUIImage()
+                
+                let tempImg =  self.users.first?.value(forKey: "image") as? CKAsset
+                if tempImg != nil{
+                    self.profileImage.image = tempImg?.toUIImage()
+                }
                 
                 self.nameLabel.text = self.users.first?.value(forKey: "name") as? String
                 self.emailLabel.text = self.users.first?.value(forKey: "email") as? String
-                let pnumber = self.users.first?.value(forKey: "phoneNumber") as! String
-                self.phonenumberLabel.text = "\(pnumber)"
+                let pnumber = self.users.first?.value(forKey: "phoneNumber") as? String
+                self.phonenumberLabel.text = "\(pnumber!)"
                 self.addressLabel.text = self.users.first?.value(forKey: "address") as? String
                 print("ANJAYS")
             }

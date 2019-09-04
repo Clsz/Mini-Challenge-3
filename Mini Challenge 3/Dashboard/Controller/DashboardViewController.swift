@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVKit
 class DashboardViewController: UIViewController {
     
     
@@ -15,6 +15,7 @@ class DashboardViewController: UIViewController {
     let cellID = "sortID"
     var sortImages = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
     var a:AcceptedViewController?
+    var isLogin:Bool = false
     
     //Outlet
     @IBOutlet weak var sortCollectionView: UICollectionView!
@@ -35,7 +36,30 @@ class DashboardViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    @IBAction func profileTapped(_ sender: UIButton) {
+        if isLogin == true{
+            performSegue(withIdentifier: "goToProfile", sender: nil)
+        }else{
+            performSegue(withIdentifier: "goToLogin", sender: nil)
+        }
+    }
+    
+    @IBAction func pickUpTapped(_ sender: UIButton) {
+        if isLogin == true{
+            performSegue(withIdentifier: "goToPickUp", sender: nil)
+        }else{
+            performSegue(withIdentifier: "goToLogin", sender: nil)
+        }
+    }
+    
+    @IBAction func unwindToDashboard(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as? LoginViewController
+        
+        isLogin = sourceViewController?.login ?? false
     }
     
     @IBAction func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
@@ -79,6 +103,30 @@ extension DashboardViewController:UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+            setVideo("1")
+        } else if indexPath.row == 1 {
+            setVideo("1")
+        } else if indexPath.row == 2 {
+            setVideo("1")
+        }
+        
+    }
+    
+    func setVideo(_ nameVideo: String) {
+        
+        if let path = Bundle.main.path(forResource: nameVideo, ofType: "MOV") {
+            
+            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            let videoPlayer = AVPlayerViewController()
+            videoPlayer.player = video
+            
+            present(videoPlayer, animated: true, completion: {
+                video.play()
+            })
+            
+        }
         
     }
 }

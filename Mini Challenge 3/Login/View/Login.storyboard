@@ -129,20 +129,13 @@
                         <outlet property="namaLengkap" destination="r3q-gX-LFT" id="3ax-bD-6iL"/>
                         <outlet property="nomorHP" destination="nTk-wQ-BwI" id="QGh-W8-SIh"/>
                         <outlet property="password" destination="Z6p-U2-zp0" id="R2o-IL-yrn"/>
-                        <segue destination="v5m-DE-Ly1" kind="show" identifier="gotoHome" id="eDn-BY-sue"/>
+                        <segue destination="RFk-UB-8W2" kind="unwind" identifier="goToHome" unwindAction="unwindToDashboard:" id="5t7-74-EQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b7-KY-YG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RFk-UB-8W2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-178.2608695652174" y="112.5"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="wkj-aE-wCc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="v5m-DE-Ly1" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MBX-3q-K48" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="546" y="-113"/>
         </scene>
     </scenes>
     <resources>

@@ -40,7 +40,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate, OnBoardi
         slide1.imageView.image = UIImage(named: "garbage-truck")
         slide1.imageView.isHidden = false
         slide1.myLabel.text = "Pick Up"
-        slide1.myDescription.text = "Give us your recyclable trash merely by calling us through Gar-Bank!"
+        slide1.myDescription.text = "Give us your recyclable trash merely by calling us through Up Trash"
         slide1.myButton.isHidden = true
         
         let slide2: Slide = Bundle.main.loadNibNamed( "Slide", owner: self, options: nil)?.first as! Slide

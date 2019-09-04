@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var accessoryDoneButton: UIBarButtonItem!
     let accessoryToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
     let flexiblea = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    var login:Bool?
 
     @IBOutlet weak var namaLengkap: UITextField!
     @IBOutlet weak var alamatLengkap: UITextField!
@@ -55,7 +56,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         password.inputAccessoryView = accessoryToolBar
         konfirmPass.inputAccessoryView = accessoryToolBar
         
-        navigationController?.navigationBar.barStyle = .black
     }
     
     
@@ -66,12 +66,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func saveToCloud(){
         let data = CKRecord(recordType: "User")
-        data["name"] = namaLengkap.text! as NSString
+        data["name"] = namaLengkap.text!
         data["balance"] = 0
-        data["address"] = alamatLengkap.text! as NSString
-        data["phoneNumber"] = nomorHP.text! as NSString
-        data["email"] = email.text! as NSString
-        data["password"] = password.text! as NSString
+        data["address"] = alamatLengkap.text!
+        data["phoneNumber"] = nomorHP.text!
+        data["email"] = email.text!
+        data["password"] = password.text! 
       
         cloud.save(data) { (record, error) in
                 guard record != nil else { return }
@@ -143,7 +143,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpditekan(_ sender: Any) {
         if validationOfTextFields() == true{
             saveToCloud()
-            performSegue(withIdentifier: "gotoHome", sender: sender)
+            login = true
+            performSegue(withIdentifier: "goToHome", sender: sender)
         }
     }
 }
