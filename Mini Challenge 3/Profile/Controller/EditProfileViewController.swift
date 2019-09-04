@@ -49,7 +49,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     //func edit teks field
     func save(){
-        let newData = self.imageEditProfile.image!.jpegData(compressionQuality: 0.000000000001)
+        let newData = self.imageEditProfile.image!.jpegData(compressionQuality: 0.00000000000000001)
         let data = createAsset(data: newData!)
         
         userEdit["name"] = nameEditLabel.text as CKRecordValue
@@ -75,7 +75,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
          if  emailEditLabel.text?.isValidEmail() == true {
             save()
         }
-        navigationController?.popViewController(animated: true)
+        
+        performSegue(withIdentifier: "backToProfile", sender: nil)
     }
     
     // Function ImageTapped
