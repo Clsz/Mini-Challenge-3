@@ -189,7 +189,7 @@ extension PickUpViewController:UICollectionViewDataSource, UICollectionViewDeleg
         newPickUp["idUser"] = CKRecord.Reference(recordID: userId, action: CKRecord_Reference_Action.none)
         newPickUp["pickUpFrom"] = addressTF.text
         newPickUp["pickUpBy"] = "Bank Sampah Mitra Pusani"
-        newPickUp["pickUpStatus"] = "Done"
+        newPickUp["pickUpStatus"] = "Requested"
         
         database.save(newPickUp) { (record, error) in
             guard record != nil else {

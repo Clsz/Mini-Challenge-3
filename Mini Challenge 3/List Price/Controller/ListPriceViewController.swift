@@ -14,8 +14,10 @@ class ListPriceViewController: UIViewController {
     // Variables
     let cellID = "listPrice"
     let cloudDatabase = CKContainer.default().publicCloudDatabase
+
     
     var listPrice = [CKRecord]()
+    
 
     // OUtlets
     @IBOutlet weak var listPriceTableView: UITableView!
@@ -25,6 +27,7 @@ class ListPriceViewController: UIViewController {
         super.viewDidLoad()
         cellDelegate()
         queryDatabase()
+        loading()
         
         self.navigationItem.title = "Price List"
     }
@@ -32,7 +35,18 @@ class ListPriceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden  = false
     }
-
+    
+    func loading() {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
     
     func queryDatabase() {
         let query = CKQuery(recordType: "Waste", predicate: NSPredicate(value: true))
@@ -43,12 +57,17 @@ class ListPriceViewController: UIViewController {
             self.listPrice = sortedRecords
             DispatchQueue.main.async {
                 self.listPriceTableView.reloadData()
+                self.dismiss(animated: false, completion: nil)
             }
         }
     }
+        
+    
+    }
+    
+    
     
 
-}
 extension ListPriceViewController:UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,5 +90,7 @@ extension ListPriceViewController:UITableViewDataSource, UITableViewDelegate{
         listPriceTableView.dataSource = self
         listPriceTableView.delegate = self
     }
+    
+    
     
 }

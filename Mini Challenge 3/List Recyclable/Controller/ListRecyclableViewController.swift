@@ -25,16 +25,18 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     var dex = 0
     var  indexx:Int?
     var tempCity : CKRecord?
-
+    
     
     @IBOutlet weak var listSampahTV: UITableView!
     
     override func viewDidLoad() {
         //                queryDatabase()
         self.navigationItem.title = "Recyclable List"
+        loading()
+        
         super.viewDidLoad()
-//        
-//        setImage()
+        //
+        //        setImage()
         
         for i in  0..<types.count{
             getOne(type: types[i])
@@ -54,7 +56,7 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "LRecyclableTVCell", for: indexPath) as! ListRecyclableTableViewCell
- 
+        
         cell.jenisSampah.text = types[indexPath.row]
         cell.listSampah = contents[indexPath.row]
         cell.listSampahCV.reloadData()
@@ -67,14 +69,26 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
+    func loading() {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    
     func getOne(type: String){
         print(#function)
         let pred = NSPredicate(format: "wasteCategory IN %@", [type])
         let query = CKQuery(recordType: "Waste", predicate: pred)
-//                let sort = NSSortDescriptor(key: "lastModifiedUserRecordID", ascending: false)
-//                query.sortDescriptors = [sort]
+        //                let sort = NSSortDescriptor(key: "lastModifiedUserRecordID", ascending: false)
+        //                query.sortDescriptors = [sort]
         let queryOperation = CKQueryOperation (query: query)
-//        queryOperation.desiredKeys = ["wasteName"]
+        //        queryOperation.desiredKeys = ["wasteName"]
         queryOperation.recordFetchedBlock = {
             record in
             print(record)
@@ -96,6 +110,7 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
                 print(self.contents)
                 DispatchQueue.main.async {
                     self.listSampahTV.reloadData()
+                    self.dismiss(animated: false, completion: nil)
                 }
             }
             
@@ -106,37 +121,37 @@ class ListRecyclableViewController: UIViewController, UITableViewDataSource, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sampahExample = segue.destination as! ListRecyclableExampleViewController
         
-//        if let indexPath = listSampah.indexPathForSelectedRow{
-            let sampah = tempCity
-            sampahExample.objListSampah = sampah
-//        }
+        //        if let indexPath = listSampah.indexPathForSelectedRow{
+        let sampah = tempCity
+        sampahExample.objListSampah = sampah
+        //        }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let detailNotification = segue.destination as! DetailNotificationViewController
-//        if let indexPath = pickUpTV.indexPathForSelectedRow{
-//            let sampah = pickups[indexPath.row]
-//            detailNotification.objPickUp = sampah
-//        }
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        let detailNotification = segue.destination as! DetailNotificationViewController
+    //        if let indexPath = pickUpTV.indexPathForSelectedRow{
+    //            let sampah = pickups[indexPath.row]
+    //            detailNotification.objPickUp = sampah
+    //        }
+    //    }
     
     
     func openCity(_ city: CKRecord) {
         tempCity = city
         //        print(tempString)
-//        if segueIndex >= 0 {
-//            selectIndex()
-            performSegue(withIdentifier: "goToExamplePage", sender: self)
-//        }
+        //        if segueIndex >= 0 {
+        //            selectIndex()
+        performSegue(withIdentifier: "goToExamplePage", sender: self)
+        //        }
     }
-//
-//    func selectIndex() {
-//        for index in 0...contents.count-1 {
-//            if tempString == "\(index)" {
-//                segueIndex = index
-//            }
-//        }
-//    }
+    //
+    //    func selectIndex() {
+    //        for index in 0...contents.count-1 {
+    //            if tempString == "\(index)" {
+    //                segueIndex = index
+    //            }
+    //        }
+    //    }
     
 }
 

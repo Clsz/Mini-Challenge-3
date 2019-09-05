@@ -23,6 +23,7 @@ class ListRecyclableTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         listSampahCV.delegate = self
         listSampahCV.dataSource = self
+        jenisSampah.isHidden = true
         
         
         
@@ -83,6 +84,7 @@ extension ListRecyclableTableViewCell:UICollectionViewDataSource,UICollectionVie
         if let data = listSampah[indexPath.row].value(forKey: "wastePictures") as? CKAsset,
             let img = data.toUIImage() {
             cell.gambarSampah.image = img
+            jenisSampah.isHidden = false
         }
         
         return cell
