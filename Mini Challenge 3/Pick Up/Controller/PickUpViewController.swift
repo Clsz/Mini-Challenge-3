@@ -18,7 +18,7 @@ class PickUpViewController: UIViewController {
     let segue1 = "goToMap"
     var imageEvidence = [UIImage]()
     var tempImage = [CKAsset]()
-    let cellID = "evidenceID"
+    let cellID = "cellEvidence"
     let database = CKContainer.init(identifier: "iCloud.Cls.MC3").publicCloudDatabase
     var mediaURL:NSURL?
     var accessoryDoneButton: UIBarButtonItem!

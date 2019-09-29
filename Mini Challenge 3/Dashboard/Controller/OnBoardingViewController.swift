@@ -14,6 +14,10 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate, OnBoardi
         performSegue(withIdentifier: "segueToMainVC", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        dest.modalPresentationStyle = .fullScreen
+    }
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
