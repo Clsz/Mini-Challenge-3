@@ -44,7 +44,6 @@
 		E1FC5551230D51C700F98225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5550230D51C700F98225 /* AppDelegate.swift */; };
 		E1FC5556230D51C700F98225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5554230D51C700F98225 /* Main.storyboard */; };
 		E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5557230D51C800F98225 /* Assets.xcassets */; };
-		E1FC555B230D51C800F98225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC5559230D51C800F98225 /* LaunchScreen.storyboard */; };
 		E1FC5565230D521700F98225 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FC5564230D521700F98225 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 		E1FC5550230D51C700F98225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1FC5555230D51C700F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1FC5557230D51C800F98225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E1FC555A230D51C800F98225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1FC555C230D51C800F98225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1FC5562230D521400F98225 /* Mini Challenge 3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mini Challenge 3.entitlements"; sourceTree = "<group>"; };
 		E1FC5564230D521700F98225 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -128,14 +126,6 @@
 				14A6E8E823139C800065B06B /* LoginViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		E1AB5E1B230D660600EC5FC3 /* Splash Screen */ = {
-			isa = PBXGroup;
-			children = (
-				E1FC5559230D51C800F98225 /* LaunchScreen.storyboard */,
-			);
-			path = "Splash Screen";
 			sourceTree = "<group>";
 		};
 		E1AB5E1C230D662D00EC5FC3 /* Profile */ = {
@@ -347,7 +337,6 @@
 				14A6E8E323139C3C0065B06B /* Login */,
 				E1AB5E21230D669700EC5FC3 /* Dashboard */,
 				E1AB5E29230D671C00EC5FC3 /* Notification */,
-				E1AB5E1B230D660600EC5FC3 /* Splash Screen */,
 				E1AB5E1C230D662D00EC5FC3 /* Profile */,
 				E1AB5E26230D66F800EC5FC3 /* Pick Up */,
 				E1AB5E2C230D674200EC5FC3 /* List Recyclable */,
@@ -436,7 +425,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A5D71B230D54030031D165 /* PickUp.storyboard in Resources */,
-				E1FC555B230D51C800F98225 /* LaunchScreen.storyboard in Resources */,
 				E1A5D71F230D54250031D165 /* ListRecyclable.storyboard in Resources */,
 				14A6E8DE230FEB8B0065B06B /* ListPrices.storyboard in Resources */,
 				E1FC5558230D51C800F98225 /* Assets.xcassets in Resources */,
@@ -495,14 +483,6 @@
 				E1FC5555230D51C700F98225 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E1FC5559230D51C800F98225 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1FC555A230D51C800F98225 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

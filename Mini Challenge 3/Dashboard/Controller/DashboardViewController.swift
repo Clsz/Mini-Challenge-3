@@ -10,7 +10,6 @@ import UIKit
 import AVKit
 class DashboardViewController: UIViewController {
     
-    
     // Variables
     let cellID = "sortID"
     var sortImages = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
@@ -26,13 +25,10 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var accountPlace: UIView!
     @IBOutlet weak var accountBar: UIView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         cellDelegate()
         setView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,25 +37,23 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func profileTapped(_ sender: UIButton) {
-        if isLogin == true{
-            performSegue(withIdentifier: "goToProfile", sender: nil)
-        }else{
-            performSegue(withIdentifier: "goToLogin", sender: nil)
-        }
+        self.performSegue(withIdentifier: "goToProfile", sender: self)
+//        if isLogin == true{
+//            performSegue(withIdentifier: "goToProfile", sender: nil)
+//        }else{
+//            performSegue(withIdentifier: "goToLogin", sender: nil)
+//        }
     }
     
     @IBAction func pickUpTapped(_ sender: UIButton) {
-        if isLogin == true{
-            performSegue(withIdentifier: "goToPickUp", sender: nil)
-        }else{
-            performSegue(withIdentifier: "goToLogin", sender: nil)
-        }
+        self.performSegue(withIdentifier: "goToPickUp", sender: self)
+        
+        //CheckSession
     }
     
     @IBAction func unwindToDashboard(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as? LoginViewController
-        
-        isLogin = sourceViewController?.login ?? false
+//        isLogin = sourceViewController?.login ?? false
     }
     
     @IBAction func unwindToRoot(_ unwindSegue: UIStoryboardSegue) {
@@ -68,10 +62,7 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    func popToRoot(_ sender:String) {
-        navigationController?.popToRootViewController(animated: true)
-        print(sender)
-    }
+    
 }
 extension DashboardViewController{
     func setView(){
@@ -81,6 +72,19 @@ extension DashboardViewController{
         recyclableStuffButton.littleRoundButton()
         accountPlace.reallyRound()
         accountBar.barRound()
+    }
+    
+    func popToRoot(_ sender:String) {
+        navigationController?.popToRootViewController(animated: true)
+        print(sender)
+    }
+    
+    func checkSession(id:String){
+        if isLogin{
+            performSegue(withIdentifier: id, sender: nil)
+        }else{
+            performSegue(withIdentifier: "goToLogin", sender: nil)
+        }
     }
 }
 
@@ -115,7 +119,6 @@ extension DashboardViewController:UICollectionViewDataSource, UICollectionViewDe
     }
     
     func setVideo(_ nameVideo: String) {
-        
         if let path = Bundle.main.path(forResource: nameVideo, ofType: "MOV") {
             
             let video = AVPlayer(url: URL(fileURLWithPath: path))
@@ -125,8 +128,7 @@ extension DashboardViewController:UICollectionViewDataSource, UICollectionViewDe
             present(videoPlayer, animated: true, completion: {
                 video.play()
             })
-            
         }
-        
     }
+    
 }

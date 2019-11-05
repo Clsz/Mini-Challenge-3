@@ -10,25 +10,13 @@ import UIKit
 
 class OnBoardingViewController: UIViewController, UIScrollViewDelegate, OnBoardingInputData {
     
-    func didTap(){
-        performSegue(withIdentifier: "segueToMainVC", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination
-        dest.modalPresentationStyle = .fullScreen
-    }
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         scrollView.delegate = self
-        
+
         let guidelineSlides:[Slide] = createSlides()
         setupSlideScrollView(guidelineSlides: guidelineSlides)
         
@@ -36,6 +24,15 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate, OnBoardi
         pageControl.currentPage = 0
         
         view.bringSubviewToFront(pageControl)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           let dest = segue.destination
+           dest.modalPresentationStyle = .fullScreen
+    }
+    
+    func didTap(){
+        performSegue(withIdentifier: "segueToMainVC", sender: self)
     }
     
     func createSlides() -> [Slide]{
